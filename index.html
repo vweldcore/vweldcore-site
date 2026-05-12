@@ -4,285 +4,424 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VWELDCORE INNOVATIONS NG | Cold Rooms &amp; Metal Fabrication</title>
-<meta name="description" content="VWELDCORE INNOVATIONS NG LIMITED — 500+ projects, 23 states. Cold room fabrication, blast freezers, stainless steel, industrial welding. CAC Registered RC 8909233. Serving Nigeria.">
+<meta name="description" content="VWELDCORE INNOVATIONS NG LIMITED — 500+ projects across 23 states. Cold room fabrication, blast freezers, stainless steel, industrial welding. CAC Registered RC 8909233. Ogun State, Nigeria.">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #0d0d0d; --surface: #141414; --surface2: #1a1a1a; --border: #262626; --steel: #9aa4ae; --gold: #f0a500; --gold-hover: #d49200; --text: #fff; --text2: #b0b8c1; --blue: #1a5276; }
+  :root {
+    --dark-bg: #0B0B0B;
+    --surface: #141414;
+    --surface2: #1E1E1E;
+    --border: #2A2A2A;
+    --steel: #9AA4AE;
+    --gold: #F0A500;
+    --gold-hover: #D49200;
+    --text: #FFFFFF;
+    --text2: #B0B8C1;
+    --blue: #1F618D;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Inter','Segoe UI',system-ui,-apple-system,sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+  body {
+    font-family: var(--font-body);
+    background: var(--dark-bg);
+    color: var(--text);
+    line-height: 1.65;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  body.loaded { opacity: 1; }
+  h1, h2, h3, h4, .nav-logo, .section-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
   .container { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; }
-  a { color: var(--gold); text-decoration: none; }
-  a:hover { color: var(--gold-hover); }
+
+  /* PRELOADER */
+  #preloader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--dark-bg); z-index: 9999; display: flex;
+    align-items: center; justify-content: center; transition: opacity 0.5s;
+    opacity: 1; visibility: visible;
+  }
+  #preloader.fade-out { opacity: 0; visibility: hidden; }
+  .spinner {
+    width: 50px; height: 50px; border: 3px solid var(--border);
+    border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
   /* NAV */
-  .nav { position: sticky; top: 0; z-index: 999; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(13,13,13,0.88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
-  .nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--text); }
+  .navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 2rem; position: fixed; top: 0; width: 100%; z-index: 999;
+    background: rgba(11,11,11,0.92); backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent; transition: all 0.3s;
+  }
+  .navbar.scrolled { border-bottom: 1px solid var(--border); box-shadow: 0 2px 15px rgba(0,0,0,0.4); }
+  .nav-logo {
+    font-size: 1.8rem; font-weight: 900; color: var(--text); text-decoration: none;
+    letter-spacing: -0.5px;
+  }
   .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-  .nav-links a { color: var(--steel); font-size: 0.88rem; font-weight: 500; transition: color .2s; }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;
+  }
+  .nav-links a {
+    color: var(--steel); text-decoration: none; font-weight: 700;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px;
+    transition: color 0.3s; position: relative;
+  }
+  .nav-links a::after {
+    content: ''; display: block; width: 0; height: 2px; background: var(--gold);
+    transition: width 0.3s; position: absolute; bottom: -4px; left: 0;
+  }
   .nav-links a:hover { color: var(--gold); }
-  .nav-cta { background: var(--gold); color: #000; padding: .55rem 1.2rem; border-radius: 4px; font-weight: 700; font-size: .85rem; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--gold); color: #000; padding: 0.7rem 1.8rem;
+    border-radius: 0; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+    text-transform: uppercase; letter-spacing: 1.2px; transition: background 0.3s;
+  }
   .nav-cta:hover { background: var(--gold-hover); color: #000; }
 
   /* HERO */
-  .hero { padding: 6rem 0 5rem; background: linear-gradient(135deg, #0a0f14 0%, #111d2b 40%, #0d0d0d 100%); position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -20%; right: -8%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(240,165,0,.07) 0%, transparent 70%); border-radius: 50%; }
-  .hero-content { position: relative; z-index: 2; max-width: 720px; }
-  .hero-badge { display: inline-block; background: rgba(240,165,0,.12); color: var(--gold); padding: .35rem 1rem; border-radius: 50px; font-size: .8rem; font-weight: 600; margin-bottom: 1.5rem; }
-  .hero h1 { font-size: 3.4rem; font-weight: 850; line-height: 1.12; margin-bottom: 1.2rem; letter-spacing: -.02em; }
-  .hero h1 span { color: var(--gold); }
-  .hero .lead { font-size: 1.15rem; color: var(--steel); margin-bottom: 2rem; max-width: 520px; }
+  .hero {
+    min-height: 100vh; display: flex; align-items: center; position: relative;
+    background: url('coldroom_hero.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(11,11,11,0.85) 0%, rgba(31,97,141,0.35) 100%);
+  }
+  .hero-content { max-width: 750px; position: relative; z-index: 2; color: #fff; }
+  .hero-badge {
+    display: inline-block; background: rgba(240,165,0,0.15); color: var(--gold);
+    padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 1.5rem;
+    border: 1px solid var(--gold);
+  }
+  .hero h1 {
+    font-size: 4.2rem; font-weight: 900; line-height: 1.12; margin-bottom: 1.2rem;
+    letter-spacing: -1px; color: #fff;
+  }
+  .hero h1 .accent { color: var(--gold); display: block; font-size: 3.2rem; }
+  .hero .lead {
+    font-size: 1.2rem; color: rgba(255,255,255,0.85); margin-bottom: 2.5rem;
+    max-width: 580px;
+  }
   .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-gold { background: var(--gold); color: #000; padding: .85rem 2rem; border-radius: 4px; font-weight: 700; font-size: .95rem; display: inline-block; transition: .2s; }
-  .btn-gold:hover { background: var(--gold-hover); color: #000; }
-  .btn-outline { border: 2px solid var(--steel); color: var(--text); padding: .85rem 2rem; border-radius: 4px; font-weight: 700; font-size: .95rem; display: inline-block; transition: .2s; }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  .hero-phone { margin-top: 1.5rem; color: var(--steel); font-size: .9rem; }
+  .btn-gold {
+    background: var(--gold); color: #000; padding: 0.95rem 2.2rem;
+    border-radius: 0; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.2px; text-decoration: none; transition: all 0.3s;
+    font-size: 0.9rem; border: 2px solid var(--gold);
+  }
+  .btn-gold:hover { background: transparent; color: var(--gold); }
+  .btn-outline-white {
+    border: 2px solid rgba(255,255,255,0.8); color: #fff;
+    padding: 0.95rem 2.2rem; border-radius: 0; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.2px; text-decoration: none;
+    font-size: 0.9rem; transition: all 0.3s;
+  }
+  .btn-outline-white:hover { background: #fff; color: var(--dark-bg); }
+  .hero-contact {
+    margin-top: 2.5rem; font-size: 0.95rem; color: rgba(255,255,255,0.8);
+  }
+  .hero-contact a { color: var(--gold); text-decoration: none; font-weight: 700; }
 
   /* STATS */
-  .stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; padding: 2.5rem 1.5rem; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stats-bar {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;
+    padding: 3rem 1.5rem; background: var(--surface); color: #fff;
+    border-bottom: 5px solid var(--gold);
+  }
   .stat-item { text-align: center; }
-  .stat-num { font-size: 2.2rem; font-weight: 850; color: var(--gold); }
-  .stat-label { font-size: .8rem; color: var(--steel); }
+  .stat-number { font-family: var(--font-heading); font-size: 2.6rem; font-weight: 900; color: var(--gold); }
+  .stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.9; margin-top: 0.3rem; }
 
   /* SECTIONS */
-  .section { padding: 5.5rem 0; }
+  .section { padding: 6rem 0; }
   .section-dark { background: var(--surface); }
-  .section-title { font-size: 2.1rem; font-weight: 750; margin-bottom: .6rem; border-left: 4px solid var(--gold); padding-left: 1rem; }
-  .section-sub { color: var(--steel); max-width: 650px; margin-bottom: 3rem; }
+  .section-title {
+    font-size: 2.6rem; font-weight: 900; color: var(--gold);
+    margin-bottom: 0.8rem; position: relative; display: inline-block;
+  }
+  .section-title::after {
+    content: ''; display: block; width: 70px; height: 3px;
+    background: var(--gold); margin-top: 0.5rem;
+  }
+  .section-subtitle {
+    color: var(--steel); max-width: 650px; margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
 
   /* SERVICES */
-  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
-  .svc-card { background: var(--surface2); border: 1px solid var(--border); padding: 2rem; border-radius: 6px; transition: .3s; }
-  .svc-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .svc-card .icon { font-size: 2rem; color: var(--gold); margin-bottom: .8rem; }
-  .svc-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .4rem; }
-  .svc-card p { color: var(--steel); font-size: .9rem; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .svc-card {
+    text-align: center; padding: 2.8rem 2rem;
+    border: 1px solid var(--border); background: var(--surface2);
+    transition: all 0.4s; border-radius: 2px; position: relative; overflow: hidden;
+  }
+  .svc-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+    background: var(--gold); transform: scaleX(0); transition: transform 0.4s;
+    transform-origin: left;
+  }
+  .svc-card:hover::before { transform: scaleX(1); }
+  .svc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 35px rgba(0,0,0,0.3); border-color: var(--gold); }
+  .svc-icon { font-size: 3rem; color: var(--gold); margin-bottom: 1.2rem; transition: color 0.3s; }
+  .svc-card:hover .svc-icon { color: #fff; }
+  .svc-card h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 0.5rem; color: var(--text); }
+  .svc-card p { color: var(--steel); font-size: 0.92rem; }
 
-  /* PROJECTS */
-  .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
-  .proj-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: .3s; }
-  .proj-card:hover { border-color: var(--gold); }
-  .proj-img { height: 280px; background-size: cover; background-position: center; position: relative; }
-  .proj-img.ci1 { background-image: url('coldroom_storage.jpg'); }
-  .proj-img.ci2 { background-image: url('fabrication_workshop.jpg'); }
-  .proj-img.ci3 { background-image: url('metal_workshop.jpg'); }
-  .proj-img.fallback { background: linear-gradient(135deg, #1a2530 0%, #0f1922 60%); display: flex; align-items: center; justify-content: center; }
-  .proj-img.fallback i { font-size: 4rem; color: var(--steel); opacity: .25; }
-  .proj-body { padding: 1.75rem; }
-  .proj-body h4 { font-weight: 700; margin-bottom: .5rem; }
-  .proj-body p { color: var(--steel); font-size: .9rem; }
+  /* PORTFOLIO */
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+  .portfolio-card {
+    background: var(--surface2); border: 1px solid var(--border);
+    overflow: hidden; transition: all 0.4s; border-radius: 2px;
+  }
+  .portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 18px 30px rgba(0,0,0,0.4); border-color: var(--gold); }
+  .portfolio-img {
+    height: 380px; background-size: cover; background-position: center;
+    position: relative; transition: transform 0.4s;
+  }
+  .portfolio-card:hover .portfolio-img { transform: scale(1.03); }
+  .portfolio-img.i1 { background-image: url('coldroom_storage.jpg'); }
+  .portfolio-img.i2 { background-image: url('fabrication_workshop.jpg'); }
+  .portfolio-img.i3 { background-image: url('metal_workshop.jpg'); }
+  .portfolio-img.fallback {
+    background: linear-gradient(135deg, #1a2530, #0f1922);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .portfolio-img.fallback i { font-size: 4rem; color: var(--steel); opacity: 0.25; }
+  .portfolio-body { padding: 2rem; }
+  .portfolio-body h4 { font-weight: 900; color: var(--text); }
+  .portfolio-body p { color: var(--steel); font-size: 0.9rem; }
 
-  /* TESTIMONIALS */
-  .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
-  .test-card { background: var(--surface2); border: 1px solid var(--border); padding: 2rem; border-radius: 6px; border-left: 4px solid var(--gold); }
-  .test-text { font-style: italic; color: var(--text2); margin-bottom: 1rem; font-size: 1rem; }
-  .test-author { font-weight: 700; color: var(--text); }
-  .test-role { color: var(--steel); font-size: .82rem; }
-
-  /* CLIENTS */
-  .client-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; align-items: center; padding: 2rem 0; }
-  .client-logo { padding: .8rem 1.5rem; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; color: var(--steel); font-weight: 600; font-size: .85rem; text-align: center; }
+  /* TESTIMONIAL CAROUSEL */
+  .testimonial-carousel .carousel-item { padding: 2rem 1rem; }
+  .testimonial-card {
+    background: var(--surface2); border-left: 5px solid var(--gold);
+    padding: 3rem 2.5rem; border-radius: 2px; box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    text-align: center; max-width: 800px; margin: 0 auto;
+  }
+  .testimonial-text {
+    font-style: italic; color: var(--text2); font-size: 1.2rem;
+    margin-bottom: 1.5rem; line-height: 1.7;
+  }
+  .testimonial-author { font-weight: 900; color: var(--text); font-size: 1.1rem; }
+  .testimonial-role { color: var(--gold); font-size: 0.85rem; font-weight: 600; }
 
   /* CONTACT */
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-  .contact-item { display: flex; gap: .8rem; align-items: flex-start; margin-bottom: 1rem; }
-  .contact-item i { font-size: 1.3rem; color: var(--gold); margin-top: 3px; }
-  .badge-cert { display: inline-block; background: rgba(240,165,0,.1); color: var(--gold); padding: .5rem 1rem; border-radius: 4px; font-weight: 600; margin: .25rem .4rem .25rem 0; font-size: .82rem; }
+  .contact-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem; align-items: start;
+  }
+  .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.8rem; }
+  .contact-item i { font-size: 1.5rem; color: var(--gold); margin-top: 3px; }
+  .badge-cert {
+    display: inline-block; background: rgba(240,165,0,0.08); color: var(--gold);
+    padding: 0.5rem 1.2rem; border-radius: 2px; font-weight: 700;
+    margin: 0.3rem 0.5rem 0.3rem 0; font-size: 0.85rem; letter-spacing: 0.5px;
+    border: 1px solid rgba(240,165,0,0.2);
+  }
 
   /* FOOTER */
-  .footer { background: #070707; padding: 2rem 0; text-align: center; color: var(--steel); font-size: .82rem; border-top: 1px solid var(--border); }
+  .footer {
+    background: #070707; color: var(--steel); text-align: center;
+    padding: 3rem 0; font-size: 0.9rem; border-top: 1px solid var(--border);
+  }
+  .footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
 
-  /* STATES LIST */
-  .states-grid { display: flex; flex-wrap: wrap; gap: .35rem 1.2rem; }
-  .states-grid span { color: var(--steel); font-size: .85rem; }
-  .states-grid span::before { content: '▸ '; color: var(--gold); font-size: .7rem; }
+  /* BACK TO TOP */
+  .back-to-top {
+    position: fixed; bottom: 30px; right: 30px; background: var(--gold);
+    color: #000; width: 45px; height: 45px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; text-decoration: none; opacity: 0; visibility: hidden;
+    transition: all 0.3s; z-index: 998; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  .back-to-top.show { opacity: 1; visibility: visible; }
+  .back-to-top:hover { background: var(--gold-hover); color: #000; }
 
   @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero h1 .accent { font-size: 2.2rem; }
     .nav-links { display: none; }
-    .section-title { font-size: 1.5rem; }
-    .stats { gap: 1.5rem; }
+    .section-title { font-size: 2rem; }
+    .stats-bar { gap: 1.5rem; }
   }
 </style>
 </head>
 <body>
+<div id="preloader"><div class="spinner"></div></div>
 
-<nav class="nav">
+<nav class="navbar" id="navbar">
   <a href="#" class="nav-logo">VWELD<span>CORE</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="tel:+2349068771239" class="nav-cta">📞 Call Now</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <span class="hero-badge">🏭 CAC Registered — RC 8909233</span>
-      <h1>Nigeria's Trusted<br>Cold Room &amp; Metal <span>Fabrication</span> Company</h1>
+      <span class="hero-badge">🏭 CAC Registered – RC 8909233</span>
+      <h1>Nigeria's Trusted<br>Cold Room &amp; Metal <span class="accent">Fabrication</span> Company</h1>
       <p class="lead">500+ projects delivered across 23 states. From industrial cold storage to precision stainless steel — we engineer solutions that never let you down.</p>
       <div class="hero-btns">
         <a href="https://wa.me/2349068771239" class="btn-gold" target="_blank">⚡ Get a Quote on WhatsApp</a>
-        <a href="#projects" class="btn-outline">View Our Work</a>
+        <a href="#portfolio" class="btn-outline-white">View Our Work</a>
       </div>
-      <div class="hero-phone">📞 <a href="tel:+2349068771239">+234 906 877 1239</a> | ✉️ <a href="mailto:info.vweldcore@gmail.com">info.vweldcore@gmail.com</a></div>
+      <div class="hero-contact">
+        📞 <a href="tel:+2349068771239">+234 906 877 1239</a> &nbsp;|&nbsp; ✉️ <a href="mailto:info.vweldcore@gmail.com">info.vweldcore@gmail.com</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Projects Completed</div></div>
-  <div class="stat-item"><div class="stat-num">23</div><div class="stat-label">States Across Nigeria</div></div>
-  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">After-Sales Support</div></div>
-  <div class="stat-item"><div class="stat-num">CAC</div><div class="stat-label">Registered Company</div></div>
-  <div class="stat-item"><div class="stat-num">99%</div><div class="stat-label">Client Satisfaction</div></div>
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-number counter" data-target="500">0</div><div class="stat-label">Projects Completed</div></div>
+  <div class="stat-item"><div class="stat-number counter" data-target="23">0</div><div class="stat-label">States Across Nigeria</div></div>
+  <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">After-Sales Support</div></div>
+  <div class="stat-item"><div class="stat-number">CAC</div><div class="stat-label">Registered Company</div></div>
+  <div class="stat-item"><div class="stat-number counter" data-target="99">0</div><div class="stat-label">% Client Satisfaction</div></div>
 </div>
 
-<!-- ABOUT -->
 <section id="about" class="section">
   <div class="container">
     <h2 class="section-title">About VWELDCORE</h2>
-    <p class="section-sub"><strong>VWELDCORE INNOVATIONS NG LIMITED (RC 8909233)</strong> — Founded 2025, incorporated 9th October 2025 under the Companies and Allied Matters Act 2020. We are a dual-expertise engineering firm combining precision metal fabrication with cold chain specialisation.</p>
-    <p style="color:var(--steel);max-width:800px;">We serve hospitality, food processing, pharmaceutical, retail, and industrial clients across Nigeria. From small restaurant chillers to large-scale warehouse cold storage, we combine precision engineering, quality materials, and a relentless commitment to reliability — ensuring every project is delivered on time and functions flawlessly. Fully compliant with Nigerian Industrial Standards and NAFDAC-compliant fabrication for food and pharmaceutical applications.</p>
+    <p class="section-subtitle"><strong>VWELDCORE INNOVATIONS NG LIMITED (RC 8909233)</strong> — Founded 2025, incorporated 9th October 2025 under the Companies and Allied Matters Act 2020. A dual‑expertise engineering firm combining precision metal fabrication with cold chain specialisation.</p>
+    <p style="color:var(--steel);max-width:800px;">We serve hospitality, food processing, pharmaceutical, retail, and industrial clients across Nigeria. From small restaurant chillers to large‑scale warehouse cold storage, we combine precision engineering, quality materials, and a relentless commitment to reliability — ensuring every project is delivered on time and functions flawlessly. Fully compliant with Nigerian Industrial Standards and NAFDAC‑compliant fabrication for food and pharmaceutical applications.</p>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="section section-dark">
   <div class="container">
     <h2 class="section-title">Our Services</h2>
-    <p class="section-sub">Full-service metal fabrication and cold chain solutions for commercial, industrial, and institutional clients.</p>
-    <div class="svc-grid">
-      <div class="svc-card"><div class="icon"><i class="bi bi-building"></i></div><h3>Cold Room Fabrication &amp; Installation</h3><p>Design, fabrication, and complete installation of walk-in cold rooms for hospitality, food processing, pharmaceutical, and retail clients across Nigeria.</p></div>
-      <div class="svc-card"><div class="icon"><i class="bi bi-thermometer-snow"></i></div><h3>Blast Freezer Solutions</h3><p>Industrial-grade blast freezers engineered to your temperature specifications, from small restaurant units to large-scale commercial freezing systems.</p></div>
-      <div class="svc-card"><div class="icon"><i class="bi bi-table"></i></div><h3>Stainless Steel Fabrication</h3><p>Custom stainless steel shelves, work tables, kitchen equipment, and commercial fittings built to the highest hygiene and durability standards.</p></div>
-      <div class="svc-card"><div class="icon"><i class="bi bi-tools"></i></div><h3>General Metal Fabrication</h3><p>Gates, railings, staircases, security doors, structural steel, and architectural metalwork for residential, commercial, and industrial projects.</p></div>
-      <div class="svc-card"><div class="icon"><i class="bi bi-wrench-adjustable"></i></div><h3>Welding &amp; Repair Services</h3><p>ARC, MIG/TIG, and spot welding for fabrication and on-site repair. Emergency call-out available for critical equipment breakdowns.</p></div>
-      <div class="svc-card"><div class="icon"><i class="bi bi-gear"></i></div><h3>Manufacturing &amp; Supply</h3><p>Manufacture and sale of metal products: storage tanks, frames, brackets, and custom industrial components. Bulk orders welcome.</p></div>
+    <p class="section-subtitle">Full‑service metal fabrication and cold chain solutions for commercial, industrial, and institutional clients.</p>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-icon"><i class="bi bi-building"></i></div><h3>Cold Room Fabrication &amp; Installation</h3><p>Design, fabrication, and complete installation of walk‑in cold rooms for hospitality, food processing, pharmaceutical, and retail clients across Nigeria.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="bi bi-thermometer-snow"></i></div><h3>Blast Freezer Solutions</h3><p>Industrial‑grade blast freezers engineered to your temperature specifications, from small restaurant units to large‑scale commercial freezing systems.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="bi bi-table"></i></div><h3>Stainless Steel Fabrication</h3><p>Custom stainless steel shelves, work tables, kitchen equipment, and commercial fittings built to the highest hygiene and durability standards.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="bi bi-tools"></i></div><h3>General Metal Fabrication</h3><p>Gates, railings, staircases, security doors, structural steel, and architectural metalwork for residential, commercial, and industrial projects.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="bi bi-wrench-adjustable"></i></div><h3>Welding &amp; Repair Services</h3><p>ARC, MIG/TIG, and spot welding for fabrication and on‑site repair. Emergency call‑out available for critical equipment breakdowns.</p></div>
+      <div class="svc-card"><div class="svc-icon"><i class="bi bi-gear"></i></div><h3>Manufacturing &amp; Supply</h3><p>Manufacture and sale of metal products: storage tanks, frames, brackets, and custom industrial components. Bulk orders welcome.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
+<section id="portfolio" class="section">
   <div class="container">
     <h2 class="section-title">Recent Projects</h2>
-    <p class="section-sub">A snapshot of our work across Nigeria — from cold storage facilities to industrial fabrication.</p>
-    <div class="proj-grid">
-      <div class="proj-card">
-        <div class="proj-img ci1 fallback"><i class="bi bi-box-seam"></i></div>
-        <div class="proj-body"><h4>Cold Room Components &amp; Assembly</h4><p>Engineered walk-in cold room panels, insulated doors, and refrigeration units for a major food processing company in Lagos.</p></div>
+    <p class="section-subtitle">A snapshot of our work across Nigeria — from cold storage facilities to industrial fabrication.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-img i1 fallback"><i class="bi bi-box-seam"></i></div>
+        <div class="portfolio-body"><h4>Cold Room Components &amp; Assembly</h4><p>Engineered walk‑in cold room panels, insulated doors, and refrigeration units for a major food processing company in Lagos.</p></div>
       </div>
-      <div class="proj-card">
-        <div class="proj-img ci2 fallback"><i class="bi bi-building-check"></i></div>
-        <div class="proj-body"><h4>10-Ton Cold Room Installation</h4><p>Fully installed and commissioned cold storage solution for a Lagos supermarket chain, eliminating spoilage and reducing energy costs.</p></div>
+      <div class="portfolio-card">
+        <div class="portfolio-img i2 fallback"><i class="bi bi-building-check"></i></div>
+        <div class="portfolio-body"><h4>10‑Ton Cold Room Installation</h4><p>Fully installed and commissioned cold storage solution for a Lagos supermarket chain, eliminating spoilage and reducing energy costs.</p></div>
       </div>
-      <div class="proj-card">
-        <div class="proj-img ci3 fallback"><i class="bi bi-hammer"></i></div>
-        <div class="proj-body"><h4>Industrial Stainless Steel Workshop</h4><p>Complete fabrication of stainless steel workstations, shelving systems, and processing tables for a pharmaceutical manufacturing facility.</p></div>
+      <div class="portfolio-card">
+        <div class="portfolio-img i3 fallback"><i class="bi bi-hammer"></i></div>
+        <div class="portfolio-body"><h4>Industrial Stainless Steel Workshop</h4><p>Complete fabrication of stainless steel workstations, shelving systems, and processing tables for a pharmaceutical manufacturing facility.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section id="testimonials" class="section section-dark">
   <div class="container">
     <h2 class="section-title">What Our Clients Say</h2>
-    <p class="section-sub">Trusted by businesses across Nigeria. Here's what they have to say about working with VWELDCORE.</p>
-    <div class="test-grid">
-      <div class="test-card">
-        <p class="test-text">"VWELDCORE built our 10-ton blast freezer ahead of schedule and it has run perfectly for over 8 months. The team is professional, incredibly neat, and their after-sales support is second to none."</p>
-        <p class="test-author">Mr. Adebayo O.</p>
-        <p class="test-role">Operations Manager, ChillFresh Foods Ltd — Lagos</p>
+    <div id="testimonialCarousel" class="carousel slide testimonial-carousel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"VWELDCORE built our 10‑ton blast freezer ahead of schedule and it has run perfectly for over 8 months. The team is professional, incredibly neat, and their after‑sales support is second to none."</p>
+            <p class="testimonial-author">Mr. Adebayo O.</p>
+            <p class="testimonial-role">Operations Manager, ChillFresh Foods Ltd — Lagos</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Their cold room installation completely transformed our perishable goods storage. No more spoilage, and their response time when we need maintenance is impressive. Highly recommended."</p>
+            <p class="testimonial-author">Mrs. C. Nwosu</p>
+            <p class="testimonial-role">Owner, PrimeMart Supermarket — Ikeja, Lagos</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"We contracted VWELDCORE for all our stainless steel fabrication — kitchen counters, shelving, and prep tables. The finish quality exceeded our expectations. They delivered on time and within budget."</p>
+            <p class="testimonial-author">Chef Emmanuel K.</p>
+            <p class="testimonial-role">Executive Chef, Grand Heritage Hotel — Abuja</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"We needed a cold room for our pharmaceutical storage urgently. VWELDCORE designed, fabricated, and installed it in under 3 weeks. Temperature stability has been flawless and NAFDAC inspection passed without issues."</p>
+            <p class="testimonial-author">Pharm. Grace I.</p>
+            <p class="testimonial-role">Managing Director, MedStore Pharmaceuticals — Port Harcourt</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"As a construction firm, we rely on VWELDCORE for all our metalwork — staircases, railings, security doors, and structural steel. Their welding quality and precision is the best we've seen in the region."</p>
+            <p class="testimonial-author">Engr. Tunde S.</p>
+            <p class="testimonial-role">Project Manager, SolidBuild Construction Ltd — Ogun State</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Two years, multiple projects, zero complaints. From our restaurant cold room to the factory blast freezer, VWELDCORE has been our go‑to. Fair pricing, excellent workmanship, and truly reliable people."</p>
+            <p class="testimonial-author">Alhaji Yusuf B.</p>
+            <p class="testimonial-role">CEO, Savannah Foods &amp; Beverages — Kano</p>
+          </div>
+        </div>
       </div>
-      <div class="test-card">
-        <p class="test-text">"Their cold room installation completely transformed our perishable goods storage. No more spoilage, and their response time when we need maintenance is impressive. Highly recommended."</p>
-        <p class="test-author">Mrs. C. Nwosu</p>
-        <p class="test-role">Owner, PrimeMart Supermarket — Ikeja, Lagos</p>
-      </div>
-      <div class="test-card">
-        <p class="test-text">"We contracted VWELDCORE for all our stainless steel fabrication — kitchen counters, shelving, and prep tables. The finish quality exceeded our expectations. They delivered on time and within budget."</p>
-        <p class="test-author">Chef Emmanuel K.</p>
-        <p class="test-role">Executive Chef, Grand Heritage Hotel — Abuja</p>
-      </div>
-      <div class="test-card">
-        <p class="test-text">"We needed a cold room for our pharmaceutical storage urgently. VWELDCORE designed, fabricated, and installed it in under 3 weeks. Temperature stability has been flawless and NAFDAC inspection passed without issues."</p>
-        <p class="test-author">Pharm. Grace I.</p>
-        <p class="test-role">Managing Director, MedStore Pharmaceuticals — Port Harcourt</p>
-      </div>
-      <div class="test-card">
-        <p class="test-text">"As a construction firm, we rely on VWELDCORE for all our metalwork — staircases, railings, security doors, and structural steel. Their welding quality and precision is the best we've seen in the region."</p>
-        <p class="test-author">Engr. Tunde S.</p>
-        <p class="test-role">Project Manager, SolidBuild Construction Ltd — Ogun State</p>
-      </div>
-      <div class="test-card">
-        <p class="test-text">"Two years, multiple projects, zero complaints. From our restaurant cold room to the factory blast freezer, VWELDCORE has been our go-to. Fair pricing, excellent workmanship, and truly reliable people."</p>
-        <p class="test-author">Alhaji Yusuf B.</p>
-        <p class="test-role">CEO, Savannah Foods &amp; Beverages — Kano</p>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- CLIENTS -->
-<section class="section">
-  <div class="container" style="text-align:center;">
-    <h2 class="section-title" style="display:inline-block;text-align:left;">Industries We Serve</h2>
-    <p class="section-sub" style="margin:0 auto 2rem;">Trusted by businesses across multiple sectors throughout Nigeria.</p>
-    <div class="client-grid">
-      <div class="client-logo">🏨 Hospitality &amp; Hotels</div>
-      <div class="client-logo">🍗 Food Processing</div>
-      <div class="client-logo">💊 Pharmaceuticals</div>
-      <div class="client-logo">🏪 Retail &amp; Supermarkets</div>
-      <div class="client-logo">🏗️ Construction</div>
-      <div class="client-logo">🏭 Manufacturing</div>
-      <div class="client-logo">🏥 Healthcare</div>
-      <div class="client-logo">🛢️ Oil &amp; Gas</div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICE AREAS -->
-<section class="section section-dark">
-  <div class="container">
-    <h2 class="section-title">Service Areas — 23 States Across Nigeria</h2>
-    <p class="section-sub">We operate extensively across all six geopolitical zones, delivering projects nationwide with the same commitment to quality and timeliness.</p>
-    <div class="states-grid">
-      <span>Abia</span><span>Abuja (FCT)</span><span>Anambra</span><span>Bauchi</span><span>Bayelsa</span><span>Benue</span>
-      <span>Cross River</span><span>Delta</span><span>Ebonyi</span><span>Edo</span><span>Ekiti</span><span>Enugu</span>
-      <span>Imo</span><span>Kaduna</span><span>Kano</span><span>Kwara</span><span>Lagos</span><span>Niger</span>
-      <span>Ogun</span><span>Ondo</span><span>Osun</span><span>Oyo</span><span>Rivers</span>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact" class="section">
   <div class="container">
+    <h2 class="section-title">Contact Us</h2>
     <div class="contact-grid">
       <div>
-        <h2 class="section-title">Contact Us</h2>
         <div class="contact-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Head Office / Registered Address:</strong><br>Ogun State, Nigeria</div></div>
         <div class="contact-item"><i class="bi bi-telephone-fill"></i><div><strong>Phone:</strong><br><a href="tel:+2349068771239">+234 906 877 1239</a></div></div>
         <div class="contact-item"><i class="bi bi-envelope-fill"></i><div><strong>Email:</strong><br><a href="mailto:info.vweldcore@gmail.com">info.vweldcore@gmail.com</a></div></div>
         <div class="contact-item"><i class="bi bi-whatsapp"></i><div><strong>WhatsApp:</strong><br><a href="https://wa.me/2349068771239" target="_blank">Chat with us on WhatsApp</a></div></div>
       </div>
       <div>
-        <h2 class="section-title">Certifications &amp; Compliance</h2>
-        <span class="badge-cert">🏛️ CAC Registered — RC 8909233</span>
+        <span class="badge-cert">🏛️ CAC Registered – RC 8909233</span>
         <span class="badge-cert">✅ Nigerian Industrial Standards Compliant</span>
-        <span class="badge-cert">💊 NAFDAC-Compliant Fabrication</span>
-        <span class="badge-cert">🔧 COREN-Aligned Engineering</span>
-        <p style="color:var(--steel);margin-top:1.5rem;font-size:.9rem;">We are a duly registered Private Company Limited by Shares under the Companies and Allied Matters Act 2020. All fabrication work complies with applicable Nigerian and international standards. Documentation available upon request.</p>
+        <span class="badge-cert">💊 NAFDAC‑Compliant Fabrication</span>
+        <span class="badge-cert">🔧 COREN‑Aligned Engineering</span>
+        <p style="color:var(--steel);margin-top:1.8rem;font-size:0.9rem;">We are a duly registered Private Company Limited by Shares under the Companies and Allied Matters Act 2020. All fabrication work complies with applicable Nigerian and international standards. Documentation available upon request.</p>
       </div>
     </div>
   </div>
@@ -294,5 +433,48 @@
   </div>
 </footer>
 
+<a href="#" class="back-to-top" id="backToTop"><i class="bi bi-arrow-up"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    document.getElementById('preloader').classList.add('fade-out');
+    document.body.classList.add('loaded');
+  });
+
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) backBtn.classList.add('show');
+    else backBtn.classList.remove('show');
+  });
+  backBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+
+  const counters = document.querySelectorAll('.counter');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = +el.getAttribute('data-target');
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let count = 0;
+        const update = () => {
+          count += increment;
+          if (count < target) { el.textContent = Math.ceil(count); requestAnimationFrame(update); }
+          else el.textContent = target;
+        };
+        update();
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => observer.observe(c));
+</script>
 </body>
 </html>
