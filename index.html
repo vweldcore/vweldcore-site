@@ -74,6 +74,11 @@
   /* HERO */
   .hero {
     min-height: 100vh; display: flex; align-items: center; position: relative;
+    background: url('hero.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(135deg, rgba(11,11,11,0.85) 0%, rgba(31,97,141,0.35) 100%);
   }
   .hero-content { max-width: 750px; position: relative; z-index: 2; color: #fff; }
@@ -146,15 +151,17 @@
   .svc-card {
     text-align: center; padding: 2.8rem 2rem;
     border: 1px solid var(--border); background: var(--surface2);
+    background-size: cover; background-position: center;
     transition: all 0.4s; border-radius: 2px; position: relative; overflow: hidden;
   }
   .svc-card::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-    background: var(--gold); transform: scaleX(0); transition: transform 0.4s;
-    transform-origin: left;
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(11,11,11,0.75); z-index: 1;
+    transition: background 0.3s;
   }
-  .svc-card:hover::before { transform: scaleX(1); }
-  .svc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 35px rgba(0,0,0,0.3); border-color: var(--gold); }
+  .svc-card:hover::before { background: rgba(11,11,11,0.65); }
+  .svc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 35px rgba(0,0,0,0.4); border-color: var(--gold); }
+  .svc-card * { position: relative; z-index: 2; }
   .svc-icon { font-size: 3rem; color: var(--gold); margin-bottom: 1.2rem; transition: color 0.3s; }
   .svc-card:hover .svc-icon { color: #fff; }
   .svc-card h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 0.5rem; color: var(--text); }
@@ -283,12 +290,12 @@
     <h2 class="section-title">Our Services</h2>
     <p class="section-subtitle">Full‑service metal fabrication and cold chain solutions for commercial, industrial, and institutional clients.</p>
     <div class="services-grid">
-      <div class="svc-card"><div class="svc-icon"><i class="bi bi-building"></i></div><h3>Cold Room Fabrication &amp; Installation</h3><p>Design, fabrication, and complete installation of walk‑in cold rooms for hospitality, food processing, pharmaceutical, and retail clients across Nigeria.</p></div>
-      <div class="svc-card"><div class="svc-icon"><i class="bi bi-thermometer-snow"></i></div><h3>Blast Freezer Solutions</h3><p>Industrial‑grade blast freezers engineered to your temperature specifications, from small restaurant units to large‑scale commercial freezing systems.</p></div>
-      <div class="svc-card"><div class="svc-icon"><i class="bi bi-table"></i></div><h3>Stainless Steel Fabrication</h3><p>Custom stainless steel shelves, work tables, kitchen equipment, and commercial fittings built to the highest hygiene and durability standards.</p></div>
-      <div class="svc-card"><div class="svc-icon"><i class="bi bi-tools"></i></div><h3>General Metal Fabrication</h3><p>Gates, railings, staircases, security doors, structural steel, and architectural metalwork for residential, commercial, and industrial projects.</p></div>
-      <div class="svc-card"><div class="svc-icon"><i class="bi bi-wrench-adjustable"></i></div><h3>Welding &amp; Repair Services</h3><p>ARC, MIG/TIG, and spot welding for fabrication and on‑site repair. Emergency call‑out available for critical equipment breakdowns.</p></div>
-      <div class="svc-card"><div class="svc-icon"><i class="bi bi-gear"></i></div><h3>Manufacturing &amp; Supply</h3><p>Manufacture and sale of metal products: storage tanks, frames, brackets, and custom industrial components. Bulk orders welcome.</p></div>
+      <div class="svc-card" style="background-image: url('stainless_steel.jpg');"><div class="svc-icon"><i class="bi bi-building"></i></div><h3>Cold Room Fabrication &amp; Installation</h3><p>Design, fabrication, and complete installation of walk‑in cold rooms for hospitality, food processing, pharmaceutical, and retail clients across Nigeria.</p></div>
+      <div class="svc-card" style="background-image: url('coldroom_components.jpg');"><div class="svc-icon"><i class="bi bi-thermometer-snow"></i></div><h3>Blast Freezer Solutions</h3><p>Industrial‑grade blast freezers engineered to your temperature specifications, from small restaurant units to large‑scale commercial freezing systems.</p></div>
+      <div class="svc-card" style="background-image: url('stainless_steel.jpg');"><div class="svc-icon"><i class="bi bi-table"></i></div><h3>Stainless Steel Fabrication</h3><p>Custom stainless steel shelves, work tables, kitchen equipment, and commercial fittings built to the highest hygiene and durability standards.</p></div>
+      <div class="svc-card" style="background-image: url('general_metal.jpg');"><div class="svc-icon"><i class="bi bi-tools"></i></div><h3>General Metal Fabrication</h3><p>Gates, railings, staircases, security doors, structural steel, and architectural metalwork for residential, commercial, and industrial projects.</p></div>
+      <div class="svc-card" style="background-image: url('welding_repair.jpg');"><div class="svc-icon"><i class="bi bi-wrench-adjustable"></i></div><h3>Welding &amp; Repair Services</h3><p>ARC, MIG/TIG, and spot welding for fabrication and on‑site repair. Emergency call‑out available for critical equipment breakdowns.</p></div>
+      <div class="svc-card" style="background-image: url('manufacturing_supply.jpg');"><div class="svc-icon"><i class="bi bi-gear"></i></div><h3>Manufacturing &amp; Supply</h3><p>Manufacture and sale of metal products: storage tanks, frames, brackets, and custom industrial components. Bulk orders welcome.</p></div>
     </div>
   </div>
 </section>
@@ -299,19 +306,19 @@
     <p class="section-subtitle">A snapshot of our work across Nigeria — from cold storage facilities to industrial fabrication.</p>
     <div class="portfolio-grid">
       <div class="portfolio-card">
-        <div class="portfolio-img" style="background-image: url('Cold_Room.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="portfolio-img" style="background-image: url('coldroom_components.jpg');"></div>
         <div class="portfolio-body"><h4>Cold Room Components &amp; Assembly</h4><p>Engineered walk‑in cold room panels, insulated doors, and refrigeration units for a major food processing company in Lagos.</p></div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-img" style="background-image: url('Cold_Room_After_Installation.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="portfolio-img" style="background-image: url('coldroom_installed.jpg');"></div>
         <div class="portfolio-body"><h4>10‑Ton Cold Room Installation</h4><p>Fully installed and commissioned cold storage solution for a Lagos supermarket chain, eliminating spoilage and reducing energy costs.</p></div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-img" style="background-image: url('fabrication_workshop.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="portfolio-img" style="background-image: url('hvac_technician.jpg');"></div>
         <div class="portfolio-body"><h4>HVAC &amp; Refrigeration Services</h4><p>On‑site maintenance, repair, and commissioning of commercial refrigeration systems by our certified technicians.</p></div>
       </div>
       <div class="portfolio-card">
-        <div class="portfolio-img" style="background-image: url('engineering_team.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="portfolio-img" style="background-image: url('engineering_team.jpg');"></div>
         <div class="portfolio-body"><h4>Engineering &amp; Design Team</h4><p>Our engineers reviewing cold room specifications for a pharmaceutical client – precision planning ensures flawless execution.</p></div>
       </div>
     </div>
