@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VWELDCORE Order Submission</title>
+
+<style>
+body{
+background:#050816;
+color:#ffffff;
+font-family:Arial,sans-serif;
+max-width:800px;
+margin:auto;
+padding:30px;
+line-height:1.7;
+}
+
+.card{
+background:#0f172a;
+padding:25px;
+border-radius:14px;
+margin-bottom:25px;
+border:1px solid #1e293b;
+}
+
+input,textarea{
+width:100%;
+padding:14px;
+margin-top:10px;
+margin-bottom:20px;
+background:#020617;
+border:1px solid #334155;
+color:white;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:14px 22px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+a{
+color:#38bdf8;
+}
+
+code{
+display:block;
+background:black;
+padding:12px;
+border-radius:8px;
+overflow-wrap:break-word;
+color:#00ff99;
+}
+</style>
+</head>
+
+<body>
+
+<h1>VWELDCORE Order Submission</h1>
+
+<div class="card">
+
+<h2>Payment Wallet</h2>
+
+<p>TON Network:</p>
+
+<code>
+UQAgnbreveQrGkCsykCGhKGDQUs6I2QTYssXg_uUgfNnGcLa
+</code>
+
+<p>
+Accepted:
+</p>
+
+<ul>
+<li>TON</li>
+<li>USDT on TON</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Submit Your Order</h2>
+
+<form action="https://formsubmit.co/vweldcore@proton.me" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_subject" value="VWELDCORE New Order">
+
+<input type="hidden" name="_template" value="table">
+
+<label>Email Address</label>
+<input type="email" name="email" required>
+
+<label>Product Purchased</label>
+<input type="text" name="product" required>
+
+<label>Telegram Username</label>
+<input type="text" name="telegram">
+
+<label>Transaction Hash / Payment Proof</label>
+<textarea name="payment_proof" rows="6" required></textarea>
+
+<button type="submit">
+Submit Order
+</button>
+
+</form>
+
+</div>
+
+<div class="card">
+
+<h2>Delivery</h2>
+
+<ul>
+<li>Orders processed manually</li>
+<li>ZIP package delivery via Telegram or email</li>
+<li>Typical response time: within 24 hours</li>
+</ul>
+
+<p>
+Telegram:
+<a href="https://t.me/vweldcore">
+@vweldcore
+</a>
+</p>
+
+</div>
+
+</body>
+</html>
