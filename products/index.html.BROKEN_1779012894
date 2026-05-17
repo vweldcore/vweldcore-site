@@ -167,23 +167,3 @@ Telegram-based order routing system
 </div>
 </section>
 
-
-<footer style="padding:40px 20px;text-align:center;color:#9ca3af;background:#030712;margin-top:60px;">
-
-<p>VWELDCORE Automation Infrastructure</p>
-
-<p>
-Operational systems, Termux deployment environments,
-automation tooling, and lightweight business infrastructure.
-</p>
-
-<p style="margin-top:20px;">
-<a href="https://t.me/Vweldocore" style="color:#00ff99;text-decoration:none;">
-Contact on Telegram
-</a>
-</p>
-
-</footer>
-
-</body>
-</html>
