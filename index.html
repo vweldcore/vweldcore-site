@@ -6,6 +6,7 @@
 <title>VWELDCORE SYSTEMS</title>
 
 <style>
+
 body{
     margin:0;
     padding:0;
@@ -16,31 +17,63 @@ body{
 
 .container{
     width:90%;
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
     padding:40px 0;
 }
 
 .hero{
-    padding:60px 0 40px;
+    padding:80px 0 60px;
 }
 
 .hero h1{
     color:#00ff99;
-    font-size:48px;
+    font-size:56px;
     margin-bottom:20px;
 }
 
 .hero p{
     color:#bbbbbb;
-    font-size:18px;
-    line-height:1.7;
-    max-width:850px;
+    font-size:20px;
+    line-height:1.8;
+    max-width:900px;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.button{
+    display:inline-block;
+    padding:15px 30px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.primary{
+    background:#00ff99;
+    color:black;
+}
+
+.secondary{
+    border:1px solid #333;
+    color:white;
+}
+
+.notice{
+    margin-top:25px;
+    color:#999999;
+    font-size:15px;
 }
 
 .section-title{
-    font-size:38px;
-    margin-top:60px;
+    font-size:42px;
+    margin-top:70px;
     margin-bottom:15px;
 }
 
@@ -51,26 +84,19 @@ body{
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:25px;
 }
 
 .card{
-    background:#111111;
-    border:1px solid #1e1e1e;
-    border-radius:14px;
-    padding:30px;
+    background:#101010;
+    border:1px solid #1d1d1d;
+    border-radius:16px;
+    padding:35px;
 }
 
 .card h3{
-    font-size:28px;
-    margin-bottom:20px;
-}
-
-.price{
-    color:#00ff99;
-    font-size:42px;
-    font-weight:bold;
+    font-size:30px;
     margin-bottom:20px;
 }
 
@@ -80,23 +106,45 @@ body{
     color:#cccccc;
 }
 
-.button{
-    display:inline-block;
-    margin-top:20px;
-    padding:14px 28px;
-    background:#00ff99;
-    color:black;
-    text-decoration:none;
+.price{
+    color:#00ff99;
+    font-size:48px;
     font-weight:bold;
-    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.proof-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.proof-card{
+    background:#101010;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid #1d1d1d;
+}
+
+.proof-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.proof-content{
+    padding:20px;
+}
+
+.proof-content h3{
+    margin-top:0;
 }
 
 .payment-box{
     background:#101010;
-    padding:30px;
-    border-radius:14px;
-    margin-top:30px;
-    border:1px solid #1e1e1e;
+    border-radius:16px;
+    padding:35px;
+    border:1px solid #1d1d1d;
 }
 
 .payment-box ul{
@@ -105,7 +153,7 @@ body{
 }
 
 .form-section{
-    margin-top:60px;
+    margin-top:80px;
 }
 
 form{
@@ -115,22 +163,22 @@ form{
 }
 
 input,textarea{
-    padding:16px;
+    padding:18px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     font-size:16px;
 }
 
 textarea{
-    min-height:140px;
+    min-height:150px;
 }
 
 button{
-    padding:16px;
+    padding:18px;
+    border:none;
+    border-radius:10px;
     background:#00ff99;
     color:black;
-    border:none;
-    border-radius:8px;
     font-size:18px;
     font-weight:bold;
     cursor:pointer;
@@ -144,9 +192,23 @@ button{
 footer{
     text-align:center;
     color:#777777;
-    padding:40px 0;
-    margin-top:60px;
+    padding:50px 0;
+    margin-top:80px;
+    border-top:1px solid #111;
 }
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.section-title{
+    font-size:34px;
+}
+
+}
+
 </style>
 </head>
 
@@ -155,16 +217,37 @@ footer{
 <div class="container">
 
 <div class="hero">
+
 <h1>VWELDCORE SYSTEMS</h1>
 
 <p>
 Industrial infrastructure, cold room systems, automation deployment,
-operational tooling, and remote technical setup services for local and
-international clients.
+operational tooling, and remote technical setup services for local
+and international clients.
 </p>
+
+<div class="hero-buttons">
+
+<a href="#request" class="button primary">
+Request Setup
+</a>
+
+<a href="https://t.me/" class="button secondary">
+Contact on Telegram
+</a>
+
 </div>
 
-<h2 class="section-title">Operational Services</h2>
+<p class="notice">
+Worldwide remote support • International payments accepted •
+Operational deployment systems
+</p>
+
+</div>
+
+<h2 class="section-title">
+Operational Services
+</h2>
 
 <p class="section-sub">
 Infrastructure deployment, fabrication systems, and operational tooling.
@@ -173,6 +256,7 @@ Infrastructure deployment, fabrication systems, and operational tooling.
 <div class="cards">
 
 <div class="card">
+
 <h3>Industrial Infrastructure</h3>
 
 <ul>
@@ -181,10 +265,13 @@ Infrastructure deployment, fabrication systems, and operational tooling.
 <li>Industrial welding systems</li>
 <li>Shelving and rack fabrication</li>
 <li>Commercial steel structures</li>
+<li>Condenser base fabrication</li>
 </ul>
+
 </div>
 
 <div class="card">
+
 <h3>Automation Systems</h3>
 
 <ul>
@@ -195,9 +282,11 @@ Infrastructure deployment, fabrication systems, and operational tooling.
 <li>GitHub deployment systems</li>
 <li>Infrastructure tooling</li>
 </ul>
+
 </div>
 
 <div class="card">
+
 <h3>Remote Technical Services</h3>
 
 <ul>
@@ -206,12 +295,16 @@ Infrastructure deployment, fabrication systems, and operational tooling.
 <li>Technical operational support</li>
 <li>Deployment assistance</li>
 <li>System optimization</li>
+<li>Remote delivery services</li>
 </ul>
-</div>
 
 </div>
 
-<h2 class="section-title">Starter Infrastructure Setup</h2>
+</div>
+
+<h2 class="section-title">
+Starter Infrastructure Setup
+</h2>
 
 <div class="card">
 
@@ -223,15 +316,88 @@ Infrastructure deployment, fabrication systems, and operational tooling.
 <li>Remote setup assistance</li>
 <li>Workflow deployment support</li>
 <li>Infrastructure configuration</li>
+<li>Technical setup delivery</li>
 </ul>
 
-<a class="button" href="#request">
+<a href="#request" class="button primary">
 Request Setup
 </a>
 
 </div>
 
-<h2 class="section-title">International Payments Accepted</h2>
+<h2 class="section-title">
+Operational Proof
+</h2>
+
+<p class="section-sub">
+Verified infrastructure execution, fabrication systems,
+and deployment workflow operations.
+</p>
+
+<div class="proof-grid">
+
+<div class="proof-card">
+
+<img src="images/runtime.jpg">
+
+<div class="proof-content">
+<h3>Runtime Execution</h3>
+
+<p>
+Verified operational runtime execution inside lightweight
+deployment infrastructure.
+</p>
+</div>
+
+</div>
+
+<div class="proof-card">
+
+<img src="images/github.jpg">
+
+<div class="proof-content">
+<h3>GitHub Deployment</h3>
+
+<p>
+Live deployment workflow and infrastructure delivery systems.
+</p>
+</div>
+
+</div>
+
+<div class="proof-card">
+
+<img src="images/fabrication.jpg">
+
+<div class="proof-content">
+<h3>Industrial Fabrication</h3>
+
+<p>
+Commercial welding and stainless steel fabrication systems.
+</p>
+</div>
+
+</div>
+
+<div class="proof-card">
+
+<img src="images/coldroom.jpg">
+
+<div class="proof-content">
+<h3>Cold Room Infrastructure</h3>
+
+<p>
+Cold room shelving systems and refrigeration infrastructure deployment.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+International Payments Accepted
+</h2>
 
 <div class="payment-box">
 
@@ -240,13 +406,16 @@ Request Setup
 <li>USDT (TRC20)</li>
 <li>Worldwide Remote Delivery</li>
 <li>International Client Support</li>
+<li>Remote Technical Deployment</li>
 </ul>
 
 </div>
 
 <div class="form-section" id="request">
 
-<h2 class="section-title">Request Setup</h2>
+<h2 class="section-title">
+Request Setup
+</h2>
 
 <form id="leadForm">
 
@@ -303,7 +472,7 @@ body:JSON.stringify(data)
 }
 );
 
-const result = await response.json();
+await response.json();
 
 document.getElementById("status").innerText =
 "Request submitted successfully.";
