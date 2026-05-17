@@ -3,277 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>VWELDCORE SYSTEMS</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
 body{
-    margin:0;
-    padding:0;
-    background:#050505;
-    color:white;
-    font-family:Arial,sans-serif;
+background:#000;
+color:#fff;
+line-height:1.7;
 }
 
 .container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-    padding:40px 0;
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:40px 0;
 }
 
 .hero{
-    padding:80px 0 60px;
+padding:70px 0 40px;
 }
 
 .hero h1{
-    color:#00ff99;
-    font-size:56px;
-    margin-bottom:20px;
+font-size:48px;
+color:#00ff99;
+margin-bottom:15px;
 }
 
 .hero p{
-    color:#bbbbbb;
-    font-size:20px;
-    line-height:1.8;
-    max-width:900px;
+max-width:850px;
+color:#bbb;
+font-size:18px;
 }
 
-.hero-buttons{
-    margin-top:35px;
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.button{
-    display:inline-block;
-    padding:15px 30px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:16px;
-}
-
-.primary{
-    background:#00ff99;
-    color:black;
-}
-
-.secondary{
-    border:1px solid #333;
-    color:white;
-}
-
-.notice{
-    margin-top:25px;
-    color:#999999;
-    font-size:15px;
+.telegram-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 28px;
+background:#00ff99;
+color:#000;
+font-weight:bold;
+text-decoration:none;
+border-radius:8px;
 }
 
 .section-title{
-    font-size:42px;
-    margin-top:70px;
-    margin-bottom:15px;
+font-size:40px;
+margin-bottom:10px;
 }
 
 .section-sub{
-    color:#999999;
-    margin-bottom:40px;
+color:#888;
+margin-bottom:40px;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
-    background:#101010;
-    border:1px solid #1d1d1d;
-    border-radius:16px;
-    padding:35px;
+background:#0f0f0f;
+padding:30px;
+border-radius:14px;
+border:1px solid #1d1d1d;
 }
 
 .card h3{
-    font-size:30px;
-    margin-bottom:20px;
+font-size:30px;
+margin-bottom:20px;
 }
 
 .card ul{
-    padding-left:20px;
-    line-height:2;
-    color:#cccccc;
+padding-left:18px;
+}
+
+.card li{
+margin-bottom:12px;
+color:#bbb;
 }
 
 .price{
-    color:#00ff99;
-    font-size:48px;
-    font-weight:bold;
-    margin-bottom:20px;
+font-size:56px;
+font-weight:bold;
+color:#00ff99;
+margin:20px 0;
 }
 
-.proof-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+.images{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:40px;
 }
 
-.proof-card{
-    background:#101010;
-    border-radius:16px;
-    overflow:hidden;
-    border:1px solid #1d1d1d;
-}
-
-.proof-card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-}
-
-.proof-content{
-    padding:20px;
-}
-
-.proof-content h3{
-    margin-top:0;
+.images img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:12px;
+border:1px solid #222;
 }
 
 .payment-box{
-    background:#101010;
-    border-radius:16px;
-    padding:35px;
-    border:1px solid #1d1d1d;
+margin-top:25px;
+background:#0f0f0f;
+padding:25px;
+border-radius:12px;
+border:1px solid #222;
 }
 
-.payment-box ul{
-    line-height:2;
-    color:#cccccc;
-}
-
-.form-section{
-    margin-top:80px;
+.payment-box li{
+margin-bottom:10px;
+color:#bbb;
 }
 
 form{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+margin-top:35px;
+display:flex;
+flex-direction:column;
+gap:18px;
 }
 
 input,textarea{
-    padding:18px;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
+padding:16px;
+background:#111;
+border:1px solid #222;
+color:#fff;
+border-radius:8px;
+font-size:16px;
 }
 
 textarea{
-    min-height:150px;
+min-height:140px;
+resize:vertical;
 }
 
 button{
-    padding:18px;
-    border:none;
-    border-radius:10px;
-    background:#00ff99;
-    color:black;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-#status{
-    margin-top:20px;
-    color:#00ff99;
+padding:16px;
+background:#00ff99;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
 }
 
 footer{
-    text-align:center;
-    color:#777777;
-    padding:50px 0;
-    margin-top:80px;
-    border-top:1px solid #111;
+padding:50px 0;
+text-align:center;
+color:#666;
 }
 
-@media(max-width:768px){
+.status{
+margin-top:15px;
+font-weight:bold;
+}
+
+@media(max-width:700px){
 
 .hero h1{
-    font-size:42px;
+font-size:36px;
 }
 
 .section-title{
-    font-size:34px;
+font-size:32px;
+}
+
+.card h3{
+font-size:24px;
+}
+
+.price{
+font-size:42px;
 }
 
 }
-
 </style>
 </head>
 
 <body>
 
+<section class="hero">
 <div class="container">
-
-<div class="hero">
 
 <h1>VWELDCORE SYSTEMS</h1>
 
 <p>
 Industrial infrastructure, cold room systems, automation deployment,
-operational tooling, and remote technical setup services for local
-and international clients.
+operational tooling, and remote technical setup services for local and international clients.
 </p>
 
-<div class="hero-buttons">
-
-<a href="#request" class="button primary">
-Request Setup
-</a>
-
-<a href="https://t.me/" class="button secondary">
+<a class="telegram-btn" href="https://t.me/Vweldocore" target="_blank">
 Contact on Telegram
 </a>
 
 </div>
+</section>
 
-<p class="notice">
-Worldwide remote support • International payments accepted •
-Operational deployment systems
-</p>
+<section>
+<div class="container">
 
-</div>
-
-<h2 class="section-title">
-Operational Services
-</h2>
+<h2 class="section-title">Operational Services</h2>
 
 <p class="section-sub">
 Infrastructure deployment, fabrication systems, and operational tooling.
 </p>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
-
 <h3>Industrial Infrastructure</h3>
-
 <ul>
 <li>Cold room installation</li>
 <li>Stainless steel fabrication</li>
 <li>Industrial welding systems</li>
 <li>Shelving and rack fabrication</li>
 <li>Commercial steel structures</li>
-<li>Condenser base fabrication</li>
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>Automation Systems</h3>
-
 <ul>
 <li>Termux automation setup</li>
 <li>Workflow deployment</li>
@@ -282,29 +241,43 @@ Infrastructure deployment, fabrication systems, and operational tooling.
 <li>GitHub deployment systems</li>
 <li>Infrastructure tooling</li>
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>Remote Technical Services</h3>
-
 <ul>
 <li>International remote setup</li>
 <li>Infrastructure deployment</li>
 <li>Technical operational support</li>
 <li>Deployment assistance</li>
 <li>System optimization</li>
-<li>Remote delivery services</li>
 </ul>
-
 </div>
 
 </div>
 
-<h2 class="section-title">
-Starter Infrastructure Setup
-</h2>
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Operational Projects</h2>
+
+<div class="images">
+<img src="images/coldroom.jpg" alt="Cold Room Project">
+<img src="images/fabrication.jpg" alt="Fabrication Project">
+<img src="images/runtime.jpg" alt="Runtime Infrastructure">
+<img src="images/github.jpg" alt="Deployment Infrastructure">
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Starter Infrastructure Setup</h2>
 
 <div class="card">
 
@@ -316,106 +289,31 @@ Starter Infrastructure Setup
 <li>Remote setup assistance</li>
 <li>Workflow deployment support</li>
 <li>Infrastructure configuration</li>
-<li>Technical setup delivery</li>
 </ul>
 
-<a href="#request" class="button primary">
-Request Setup
-</a>
-
 </div>
-
-<h2 class="section-title">
-Operational Proof
-</h2>
-
-<p class="section-sub">
-Verified infrastructure execution, fabrication systems,
-and deployment workflow operations.
-</p>
-
-<div class="proof-grid">
-
-<div class="proof-card">
-
-<img src="images/runtime.jpg">
-
-<div class="proof-content">
-<h3>Runtime Execution</h3>
-
-<p>
-Verified operational runtime execution inside lightweight
-deployment infrastructure.
-</p>
-</div>
-
-</div>
-
-<div class="proof-card">
-
-<img src="images/github.jpg">
-
-<div class="proof-content">
-<h3>GitHub Deployment</h3>
-
-<p>
-Live deployment workflow and infrastructure delivery systems.
-</p>
-</div>
-
-</div>
-
-<div class="proof-card">
-
-<img src="images/fabrication.jpg">
-
-<div class="proof-content">
-<h3>Industrial Fabrication</h3>
-
-<p>
-Commercial welding and stainless steel fabrication systems.
-</p>
-</div>
-
-</div>
-
-<div class="proof-card">
-
-<img src="images/coldroom.jpg">
-
-<div class="proof-content">
-<h3>Cold Room Infrastructure</h3>
-
-<p>
-Cold room shelving systems and refrigeration infrastructure deployment.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<h2 class="section-title">
-International Payments Accepted
-</h2>
 
 <div class="payment-box">
+
+<h3 style="margin-bottom:20px;">International Payments Accepted</h3>
 
 <ul>
 <li>USD Bank Transfer</li>
 <li>USDT (TRC20)</li>
 <li>Worldwide Remote Delivery</li>
-<li>International Client Support</li>
-<li>Remote Technical Deployment</li>
+<li>Crypto Payments Supported</li>
+<li>Direct Telegram Coordination</li>
 </ul>
 
 </div>
 
-<div class="form-section" id="request">
+</div>
+</section>
 
-<h2 class="section-title">
-Request Setup
-</h2>
+<section>
+<div class="container">
+
+<h2 class="section-title">Request Setup</h2>
 
 <form id="leadForm">
 
@@ -427,67 +325,45 @@ Request Setup
 
 <textarea id="message" placeholder="Describe your request"></textarea>
 
-<button type="submit">
-Submit Request
-</button>
+<button type="submit">Submit Request</button>
+
+<div class="status" id="status"></div>
 
 </form>
 
-<p id="status"></p>
-
 </div>
+</section>
 
 <footer>
-VWELDCORE SYSTEMS — Operational Infrastructure & Deployment Services
+VWELDCORE SYSTEMS © 2026
 </footer>
 
-</div>
-
 <script>
-
-document.getElementById("leadForm").addEventListener("submit", async function(e){
+document.getElementById("leadForm").addEventListener("submit", function(e){
 
 e.preventDefault();
 
-document.getElementById("status").innerText =
-"Submitting request...";
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const service = document.getElementById("service").value;
+const message = document.getElementById("message").value;
 
-const data = {
-name: document.getElementById("name").value,
-email: document.getElementById("email").value,
-service: document.getElementById("service").value,
-message: document.getElementById("message").value
-};
+const text =
+"NEW VWELDCORE LEAD%0A%0A" +
+"Name: " + name + "%0A" +
+"Email: " + email + "%0A" +
+"Service: " + service + "%0A%0A" +
+"Request:%0A" + message;
 
-try{
-
-const response = await fetch(
-"https://vweldcore-webhook.onrender.com",
-{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(data)
-}
+window.open(
+"https://t.me/Vweldocore?text=" + text,
+"_blank"
 );
 
-await response.json();
-
-document.getElementById("status").innerText =
-"Request submitted successfully.";
-
-document.getElementById("leadForm").reset();
-
-}catch(err){
-
-document.getElementById("status").innerText =
-"Submission failed. Try again.";
-
-}
+document.getElementById("status").innerHTML =
+"Lead redirected successfully to Telegram.";
 
 });
-
 </script>
 
 </body>
