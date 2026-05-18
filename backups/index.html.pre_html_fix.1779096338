@@ -366,7 +366,8 @@ document.getElementById("status").innerHTML =
 });
 </script>
 
-
+</body>
+</html>
 
 <section class="container">
 
@@ -491,7 +492,4 @@ Clients remain fully responsible for how deployed systems, tooling, infrastructu
 </div>
 
 </section>
-
-</body>
-</html>
 
