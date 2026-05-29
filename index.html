@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>VWELDCORE | Cold Room & Industrial Fabrication</title>
+<title>VWELDCORE Innovations NG Limited | Cold Room & Stainless Steel Engineering Nigeria</title>
+
+<meta name="description" content="VWELDCORE Innovations NG Limited delivers commercial cold room construction, stainless steel fabrication, refrigeration systems, industrial welding, and engineering installation services across Nigeria.">
 
 <style>
 
@@ -25,29 +25,46 @@ line-height:1.7;
 
 .container{
 width:92%;
-max-width:1180px;
+max-width:1280px;
 margin:auto;
-padding:80px 0;
+}
+
+header{
+padding:24px 0;
+border-bottom:1px solid #151515;
+position:sticky;
+top:0;
+background:#050505;
+z-index:1000;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#00ff99;
 }
 
 .hero{
-padding-top:120px;
-padding-bottom:100px;
-text-align:left;
+padding:120px 0 100px;
 }
 
 .hero h1{
-font-size:64px;
-line-height:1.1;
-max-width:900px;
-color:#00ff99;
+font-size:72px;
+line-height:1.05;
+max-width:980px;
 margin-bottom:30px;
 }
 
 .hero p{
 font-size:22px;
+max-width:900px;
 color:#aaaaaa;
-max-width:850px;
 margin-bottom:40px;
 }
 
@@ -55,84 +72,85 @@ margin-bottom:40px;
 display:flex;
 flex-wrap:wrap;
 gap:20px;
-margin-top:30px;
 }
 
-.cta-btn{
+.btn{
 display:inline-block;
 padding:18px 34px;
-background:#00ff99;
-color:#000000;
-font-weight:bold;
+border-radius:12px;
 text-decoration:none;
-border-radius:10px;
+font-weight:bold;
 font-size:18px;
 }
 
-.secondary-btn{
-background:#151515;
+.btn-primary{
+background:#00ff99;
+color:#000000;
+}
+
+.btn-secondary{
+background:#121212;
 color:#ffffff;
-border:1px solid #333333;
+border:1px solid #2a2a2a;
 }
 
-.stats{
+.trust-bar{
+padding:30px 0;
+border-top:1px solid #121212;
+border-bottom:1px solid #121212;
+margin-top:60px;
+}
+
+.trust-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:70px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
 
-.stat-box{
-background:#101010;
-padding:35px;
-border-radius:16px;
-border:1px solid #1f1f1f;
+.trust-item{
+background:#0f0f0f;
+padding:25px;
+border-radius:14px;
+border:1px solid #1d1d1d;
 }
 
-.stat-box h2{
-font-size:48px;
-color:#00ff99;
-margin-bottom:10px;
-}
-
-.stat-box p{
-color:#999999;
+section{
+padding:100px 0;
 }
 
 .section-title{
-font-size:52px;
+font-size:54px;
 margin-bottom:20px;
 }
 
 .section-sub{
 font-size:20px;
-color:#999999;
+color:#9a9a9a;
 max-width:900px;
 margin-bottom:60px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:28px;
 }
 
 .card{
-background:#0f0f0f;
+background:#0d0d0d;
 padding:35px;
 border-radius:18px;
-border:1px solid #1f1f1f;
+border:1px solid #1c1c1c;
 }
 
 .card h3{
-font-size:32px;
+font-size:30px;
 margin-bottom:20px;
+color:#00ff99;
 }
 
-.price{
-font-size:58px;
-font-weight:bold;
-color:#00ff99;
+.card p{
+color:#b5b5b5;
 margin-bottom:20px;
 }
 
@@ -141,54 +159,59 @@ padding-left:20px;
 }
 
 .card li{
-margin-bottom:14px;
-color:#bbbbbb;
+margin-bottom:12px;
+color:#bcbcbc;
 }
 
-.proof-grid{
+.gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
 }
 
-.proof-box{
+.gallery img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:16px;
+border:1px solid #1f1f1f;
+background:#111111;
+}
+
+.process{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.process-box{
 background:#101010;
 padding:30px;
 border-radius:16px;
-border:1px solid #1f1f1f;
+border:1px solid #1c1c1c;
 }
 
-.proof-box h4{
+.process-box h3{
 font-size:28px;
-margin-bottom:18px;
+margin-bottom:14px;
 color:#00ff99;
 }
 
-.proof-box p{
-color:#bbbbbb;
+.contact{
+background:#0d0d0d;
+padding:50px;
+border-radius:20px;
+border:1px solid #1c1c1c;
 }
 
-.contact-box{
-background:#0f0f0f;
-padding:45px;
-border-radius:18px;
-border:1px solid #1f1f1f;
-}
-
-.contact-box h2{
-font-size:46px;
+.contact h2{
+font-size:48px;
 margin-bottom:20px;
 }
 
-.contact-box p{
-font-size:20px;
-color:#aaaaaa;
-margin-bottom:30px;
-}
-
 .contact-item{
+font-size:22px;
 margin-bottom:18px;
-font-size:20px;
 }
 
 .contact-item a{
@@ -196,109 +219,96 @@ color:#00ff99;
 text-decoration:none;
 }
 
-.notice{
-background:#0d0d0d;
-padding:40px;
-border-radius:18px;
-border:1px solid #222222;
-}
-
-.notice h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.notice p{
-color:#999999;
-margin-bottom:20px;
-}
-
 footer{
-padding:50px 0;
+padding:60px 0;
 text-align:center;
-color:#666666;
-font-size:15px;
 border-top:1px solid #151515;
-margin-top:60px;
+color:#777777;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:42px;
-}
-
-.hero p{
-font-size:18px;
+font-size:44px;
 }
 
 .section-title{
 font-size:38px;
 }
 
-.price{
-font-size:42px;
+.hero p,
+.section-sub{
+font-size:18px;
+}
+
+.contact h2{
+font-size:34px;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<section class="container hero">
+<header>
+<div class="container nav">
+<div class="logo">
+VWELDCORE
+</div>
+
+<div>
+VWELDCORE Innovations NG Limited
+</div>
+</div>
+</header>
+
+<section class="hero container">
 
 <h1>
-Cold Room Engineering, Stainless Fabrication & Industrial Operations
+Commercial Cold Room Engineering & Stainless Steel Fabrication Across Nigeria
 </h1>
 
 <p>
-VWELDCORE delivers cold room construction, stainless steel fabrication,
-industrial welding, refrigeration systems, operational engineering support,
-and deployment-focused automation infrastructure for real-world business operations.
+VWELDCORE Innovations NG Limited provides cold room construction, refrigeration system installation, stainless steel fabrication, industrial welding, and engineering support services for supermarkets, restaurants, hotels, pharmaceutical facilities, logistics operators, and commercial businesses.
 </p>
 
 <div class="cta-row">
 
-<a
-class="cta-btn"
-href="https://t.me/Vweldocore"
-target="_blank"
->
-Request Project Consultation
+<a class="btn btn-primary"
+href="https://wa.me/2349068771239"
+target="_blank">
+Request Project Quote
 </a>
 
-<a
-class="cta-btn secondary-btn"
-href="products/"
->
-View Automation Products
+<a class="btn btn-secondary"
+href="#projects">
+View Projects
 </a>
 
 </div>
 
-<div class="stats">
+<div class="trust-bar">
 
-<div class="stat-box">
-<h2>Industrial</h2>
-<p>Cold room and fabrication execution</p>
+<div class="trust-grid">
+
+<div class="trust-item">
+Registered Nigerian Limited Company
 </div>
 
-<div class="stat-box">
-<h2>Engineering</h2>
-<p>Operational systems and refrigeration capability</p>
+<div class="trust-item">
+Commercial Cold Room Installation
 </div>
 
-<div class="stat-box">
-<h2>Automation</h2>
-<p>Deployment infrastructure and workflow systems</p>
+<div class="trust-item">
+Stainless Steel Fabrication
 </div>
 
-<div class="stat-box">
-<h2>Direct</h2>
-<p>Engineer-to-client implementation workflow</p>
+<div class="trust-item">
+Industrial Welding Services
+</div>
+
 </div>
 
 </div>
@@ -308,94 +318,86 @@ View Automation Products
 <section class="container">
 
 <h2 class="section-title">
-Core Deployment Services
+Engineering Services
 </h2>
 
 <p class="section-sub">
-Revenue-focused operational systems designed for businesses requiring scalable execution infrastructure, automation capability, and workflow optimization.
+Industrial fabrication and refrigeration solutions built for operational durability, food-grade compliance, and commercial performance.
 </p>
 
 <div class="grid">
 
 <div class="card">
+<h3>Cold Room Construction</h3>
 
-<h3>
-Cold Room Construction
-</h3>
-
-<div class="price">
-Custom Quote
-</div>
+<p>
+Commercial cold room systems for food storage, frozen products, pharmaceutical applications, and temperature-controlled operations.
+</p>
 
 <ul>
-<li>Commercial cold room installation</li>
-<li>Cold storage engineering</li>
-<li>Refrigeration system integration</li>
-<li>Insulated panel deployment</li>
-<li>Industrial cooling support</li>
+<li>Cold room fabrication</li>
+<li>Insulated panel installation</li>
+<li>Compressor system setup</li>
+<li>Freezer room construction</li>
+<li>Maintenance support</li>
 </ul>
-
 </div>
 
 <div class="card">
+<h3>Stainless Steel Fabrication</h3>
 
-<h3>
-Stainless Steel Fabrication
-</h3>
-
-<div class="price">
-Custom Quote
-</div>
+<p>
+Custom stainless fabrication for commercial kitchens, storage facilities, production environments, and industrial operations.
+</p>
 
 <ul>
-<li>Food-grade stainless fabrication</li>
-<li>Industrial steel structures</li>
-<li>Custom fabrication projects</li>
-<li>Workshop manufacturing support</li>
-<li>Metal engineering execution</li>
+<li>Stainless shelves</li>
+<li>Food-grade fabrication</li>
+<li>Custom steel structures</li>
+<li>Industrial welding</li>
+<li>On-site installation</li>
 </ul>
-
 </div>
 
 <div class="card">
+<h3>Industrial Support</h3>
 
-<h3>
-Industrial Welding & Repair
-</h3>
-
-<div class="price">
-Custom Quote
-</div>
+<p>
+Technical support and engineering assistance for operational facilities requiring fabrication, repair, installation, or infrastructure upgrades.
+</p>
 
 <ul>
-<li>Welding repair operations</li>
-<li>Structural reinforcement</li>
-<li>Industrial maintenance support</li>
-<li>On-site repair execution</li>
-<li>Equipment restoration</li>
+<li>Equipment repairs</li>
+<li>Steel reinforcement</li>
+<li>Welding services</li>
+<li>Installation support</li>
+<li>Facility upgrades</li>
 </ul>
+</div>
 
 </div>
 
-<div class="card">
+</section>
 
-<h3>
-Automation Infrastructure
-</h3>
+<section class="container" id="projects">
 
-<div class="price">
-₦25,000+
-</div>
+<h2 class="section-title">
+Project Gallery
+</h2>
 
-<ul>
-<li>Termux deployment systems</li>
-<li>Workflow automation infrastructure</li>
-<li>Operational tooling environments</li>
-<li>Backend execution support</li>
-<li>Mobile-first automation systems</li>
-</ul>
+<p class="section-sub">
+Real fabrication and installation projects executed by VWELDCORE Innovations NG Limited.
+</p>
 
-</div>
+<div class="gallery">
+
+<img src="assets/images/projects/project1.jpg" alt="Cold room installation">
+
+<img src="assets/images/projects/project2.jpg" alt="Stainless fabrication">
+
+<img src="assets/images/projects/project3.jpg" alt="Industrial welding">
+
+<img src="assets/images/projects/project4.jpg" alt="Commercial refrigeration">
 
 </div>
 
@@ -404,54 +406,29 @@ Automation Infrastructure
 <section class="container">
 
 <h2 class="section-title">
-Industrial Project Capability
+Project Delivery Process
 </h2>
 
-<p class="section-sub">
-VWELDCORE executes fabrication, refrigeration, cold room engineering,
-industrial welding, stainless steel projects, and operational infrastructure
-for commercial and industrial environments.
-</p>
+<div class="process">
 
-<div class="proof-grid">
-
-<div class="proof-box">
-
-<h4>
-Cold Room Engineering
-</h4>
-
-<p>
-Commercial cold room construction, refrigeration system installation,
-temperature-controlled storage deployment, and industrial cooling execution.
-</p>
-
+<div class="process-box">
+<h3>01</h3>
+<p>Consultation and project assessment.</p>
 </div>
 
-<div class="proof-box">
-
-<h4>
-Stainless Steel Fabrication
-</h4>
-
-<p>
-Food-grade stainless fabrication, industrial steel structures,
-custom fabrication work, workshop operations, and welding support.
-</p>
-
+<div class="process-box">
+<h3>02</h3>
+<p>Site inspection and engineering planning.</p>
 </div>
 
-<div class="proof-box">
+<div class="process-box">
+<h3>03</h3>
+<p>Fabrication and equipment preparation.</p>
+</div>
 
-<h4>
-Automation Infrastructure
-</h4>
-
-<p>
-Deployment-focused automation systems, lightweight operational tooling,
-mobile-first Termux infrastructure, and backend workflow environments.
-</p>
-
+<div class="process-box">
+<h3>04</h3>
+<p>Installation, testing, and delivery.</p>
 </div>
 
 </div>
@@ -460,63 +437,37 @@ mobile-first Termux infrastructure, and backend workflow environments.
 
 <section class="container">
 
-<div class="contact-box">
+<div class="contact">
 
 <h2>
-Request a Project Quote
+Request Consultation
 </h2>
 
-<p>
-For cold room construction, stainless steel fabrication, industrial welding, refrigeration projects, or automation infrastructure inquiries:
-</p>
+<div class="contact-item">
+WhatsApp:
+<a href="https://wa.me/2349068771239">
++234 906 877 1239
+</a>
+</div>
 
 <div class="contact-item">
-<strong>Email:</strong>
+Email:
 <a href="mailto:info.vweldcore@gmail.com">
 info.vweldcore@gmail.com
 </a>
 </div>
 
 <div class="contact-item">
-<strong>Telegram:</strong>
-<a href="https://t.me/Vweldocore" target="_blank">
-@Vweldocore
-</a>
+Company:
+VWELDCORE Innovations NG Limited
 </div>
-
-<div class="contact-item">
-<strong>Request Subject:</strong>
-COLD ROOM / FABRICATION PROJECT REQUEST
-</div>
-
-</div>
-
-</section>
-
-<section class="container">
-
-<div class="notice">
-
-<h2>
-Operational Responsibility Notice
-</h2>
-
-<p>
-VWELDCORE deploys automation infrastructure, operational systems, backend tooling, integrations, scripting layers, execution tooling, and workflow infrastructure for legitimate operational and business use cases.
-</p>
-
-<p>
-Clients remain fully responsible for how deployed systems, infrastructure, tooling, automations, scripts, integrations, execution layers, and operational workflows are ultimately configured, managed, or used after delivery.
-</p>
 
 </div>
 
 </section>
 
 <footer>
-
-VWELDCORE SYSTEMS — Cold Room Engineering, Stainless Fabrication & Industrial Operations
-
+© 2026 VWELDCORE Innovations NG Limited. All rights reserved.
 </footer>
 
 </body>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VWELDCORE | Automation Infrastructure</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#050505;
+color:#ffffff;
+line-height:1.7;
+}
+
+.container{
+width:92%;
+max-width:1180px;
+margin:auto;
+padding:80px 0;
+}
+
+.hero{
+padding-top:120px;
+padding-bottom:100px;
+text-align:left;
+}
+
+.hero h1{
+font-size:64px;
+line-height:1.1;
+max-width:900px;
+color:#00ff99;
+margin-bottom:30px;
+}
+
+.hero p{
+font-size:22px;
+color:#aaaaaa;
+max-width:850px;
+margin-bottom:40px;
+}
+
+.cta-row{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+margin-top:30px;
+}
+
+.cta-btn{
+display:inline-block;
+padding:18px 34px;
+background:#00ff99;
+color:#000000;
+font-weight:bold;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+}
+
+.secondary-btn{
+background:#151515;
+color:#ffffff;
+border:1px solid #333333;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:70px;
+}
+
+.stat-box{
+background:#101010;
+padding:35px;
+border-radius:16px;
+border:1px solid #1f1f1f;
+}
+
+.stat-box h2{
+font-size:48px;
+color:#00ff99;
+margin-bottom:10px;
+}
+
+.stat-box p{
+color:#999999;
+}
+
+.section-title{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.section-sub{
+font-size:20px;
+color:#999999;
+max-width:900px;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:28px;
+}
+
+.card{
+background:#0f0f0f;
+padding:35px;
+border-radius:18px;
+border:1px solid #1f1f1f;
+}
+
+.card h3{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.price{
+font-size:58px;
+font-weight:bold;
+color:#00ff99;
+margin-bottom:20px;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin-bottom:14px;
+color:#bbbbbb;
+}
+
+.proof-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.proof-box{
+background:#101010;
+padding:30px;
+border-radius:16px;
+border:1px solid #1f1f1f;
+}
+
+.proof-box h4{
+font-size:28px;
+margin-bottom:18px;
+color:#00ff99;
+}
+
+.proof-box p{
+color:#bbbbbb;
+}
+
+.contact-box{
+background:#0f0f0f;
+padding:45px;
+border-radius:18px;
+border:1px solid #1f1f1f;
+}
+
+.contact-box h2{
+font-size:46px;
+margin-bottom:20px;
+}
+
+.contact-box p{
+font-size:20px;
+color:#aaaaaa;
+margin-bottom:30px;
+}
+
+.contact-item{
+margin-bottom:18px;
+font-size:20px;
+}
+
+.contact-item a{
+color:#00ff99;
+text-decoration:none;
+}
+
+.notice{
+background:#0d0d0d;
+padding:40px;
+border-radius:18px;
+border:1px solid #222222;
+}
+
+.notice h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.notice p{
+color:#999999;
+margin-bottom:20px;
+}
+
+footer{
+padding:50px 0;
+text-align:center;
+color:#666666;
+font-size:15px;
+border-top:1px solid #151515;
+margin-top:60px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title{
+font-size:38px;
+}
+
+.price{
+font-size:42px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="container hero">
+
+<h1>
+Automation Infrastructure Built For Operational Businesses
+</h1>
+
+<p>
+VWELDCORE engineers deployment-focused automation systems, lead infrastructure, operational tooling, backend execution workflows, and scalable process automation for businesses that need functional operational systems instead of theory.
+</p>
+
+<div class="cta-row">
+
+<a
+class="cta-btn"
+href="mailto:info.vweldcore@gmail.com?subject=AUTOMATION%20DEPLOYMENT%20REQUEST"
+>
+Request Deployment
+</a>
+
+<a
+class="cta-btn secondary-btn"
+href="https://t.me/Vweldocore"
+target="_blank"
+>
+Contact on Telegram
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Operational automation capability</p>
+</div>
+
+<div class="stat-box">
+<h2>4</h2>
+<p>Core deployment service categories</p>
+</div>
+
+<div class="stat-box">
+<h2>100%</h2>
+<p>Deployment-focused infrastructure positioning</p>
+</div>
+
+<div class="stat-box">
+<h2>Direct</h2>
+<p>Engineer-to-client implementation workflow</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<h2 class="section-title">
+Core Deployment Services
+</h2>
+
+<p class="section-sub">
+Revenue-focused operational systems designed for businesses requiring scalable execution infrastructure, automation capability, and workflow optimization.
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+Outreach Infrastructure
+</h3>
+
+<div class="price">
+$300+
+</div>
+
+<ul>
+<li>Automated outreach systems</li>
+<li>Follow-up execution automation</li>
+<li>Lead routing infrastructure</li>
+<li>Delivery tracking systems</li>
+<li>Template deployment architecture</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>
+Lead Generation Systems
+</h3>
+
+<div class="price">
+$250+
+</div>
+
+<ul>
+<li>Lead extraction infrastructure</li>
+<li>Business targeting pipelines</li>
+<li>Lead qualification systems</li>
+<li>Data export workflows</li>
+<li>Acquisition automation</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>
+Business Automation
+</h3>
+
+<div class="price">
+$500+
+</div>
+
+<ul>
+<li>Workflow automation</li>
+<li>Backend execution scripting</li>
+<li>Operational integrations</li>
+<li>Infrastructure deployment</li>
+<li>Process optimization systems</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>
+Custom Operational Tooling
+</h3>
+
+<div class="price">
+Custom
+</div>
+
+<ul>
+<li>Custom infrastructure systems</li>
+<li>Execution tooling</li>
+<li>Automation layers</li>
+<li>Internal operational systems</li>
+<li>Deployment support</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<h2 class="section-title">
+Operational Capability
+</h2>
+
+<p class="section-sub">
+VWELDCORE builds execution-focused infrastructure intended for operational deployment, scalable workflows, business process automation, and technical execution support.
+</p>
+
+<div class="proof-grid">
+
+<div class="proof-box">
+
+<h4>
+Automation Execution
+</h4>
+
+<p>
+Automation deployment systems engineered for operational execution, workflow routing, delivery tracking, qualification logic, and scalable backend automation support.
+</p>
+
+</div>
+
+<div class="proof-box">
+
+<h4>
+Lead Infrastructure
+</h4>
+
+<p>
+Business lead acquisition pipelines, qualification systems, routing workflows, filtering layers, and deployment-focused operational targeting infrastructure.
+</p>
+
+</div>
+
+<div class="proof-box">
+
+<h4>
+Operational Deployment
+</h4>
+
+<p>
+Backend automation deployment, execution systems, operational tooling, process integrations, and scalable implementation support for operational businesses.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<div class="contact-box">
+
+<h2>
+Implementation Requests
+</h2>
+
+<p>
+For automation deployment inquiries, infrastructure implementation, operational tooling, workflow automation, or execution system integration:
+</p>
+
+<div class="contact-item">
+<strong>Email:</strong>
+<a href="mailto:info.vweldcore@gmail.com">
+info.vweldcore@gmail.com
+</a>
+</div>
+
+<div class="contact-item">
+<strong>Telegram:</strong>
+<a href="https://t.me/Vweldocore" target="_blank">
+@Vweldocore
+</a>
+</div>
+
+<div class="contact-item">
+<strong>Request Subject:</strong>
+AUTOMATION DEPLOYMENT REQUEST
+</div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<div class="notice">
+
+<h2>
+Operational Responsibility Notice
+</h2>
+
+<p>
+VWELDCORE deploys automation infrastructure, operational systems, backend tooling, integrations, scripting layers, execution tooling, and workflow infrastructure for legitimate operational and business use cases.
+</p>
+
+<p>
+Clients remain fully responsible for how deployed systems, infrastructure, tooling, automations, scripts, integrations, execution layers, and operational workflows are ultimately configured, managed, or used after delivery.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+VWELDCORE SYSTEMS — Automation Infrastructure & Operational Deployment
+
+</footer>
+
+</body>
+</html>
