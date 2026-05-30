@@ -1,474 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>VWELDCORE Innovations NG Limited | Cold Room & Stainless Steel Engineering Nigeria</title>
-
-<meta name="description" content="VWELDCORE Innovations NG Limited delivers commercial cold room construction, stainless steel fabrication, refrigeration systems, industrial welding, and engineering installation services across Nigeria.">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#050505;
-color:#ffffff;
-line-height:1.7;
-}
-
-.container{
-width:92%;
-max-width:1280px;
-margin:auto;
-}
-
-header{
-padding:24px 0;
-border-bottom:1px solid #151515;
-position:sticky;
-top:0;
-background:#050505;
-z-index:1000;
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:24px;
-font-weight:bold;
-color:#00ff99;
-}
-
-.hero{
-padding:120px 0 100px;
-}
-
-.hero h1{
-font-size:72px;
-line-height:1.05;
-max-width:980px;
-margin-bottom:30px;
-}
-
-.hero p{
-font-size:22px;
-max-width:900px;
-color:#aaaaaa;
-margin-bottom:40px;
-}
-
-.cta-row{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-}
-
-.btn{
-display:inline-block;
-padding:18px 34px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-font-size:18px;
-}
-
-.btn-primary{
-background:#00ff99;
-color:#000000;
-}
-
-.btn-secondary{
-background:#121212;
-color:#ffffff;
-border:1px solid #2a2a2a;
-}
-
-.trust-bar{
-padding:30px 0;
-border-top:1px solid #121212;
-border-bottom:1px solid #121212;
-margin-top:60px;
-}
-
-.trust-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.trust-item{
-background:#0f0f0f;
-padding:25px;
-border-radius:14px;
-border:1px solid #1d1d1d;
-}
-
-section{
-padding:100px 0;
-}
-
-.section-title{
-font-size:54px;
-margin-bottom:20px;
-}
-
-.section-sub{
-font-size:20px;
-color:#9a9a9a;
-max-width:900px;
-margin-bottom:60px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:28px;
-}
-
-.card{
-background:#0d0d0d;
-padding:35px;
-border-radius:18px;
-border:1px solid #1c1c1c;
-}
-
-.card h3{
-font-size:30px;
-margin-bottom:20px;
-color:#00ff99;
-}
-
-.card p{
-color:#b5b5b5;
-margin-bottom:20px;
-}
-
-.card ul{
-padding-left:20px;
-}
-
-.card li{
-margin-bottom:12px;
-color:#bcbcbc;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:16px;
-border:1px solid #1f1f1f;
-background:#111111;
-}
-
-.process{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.process-box{
-background:#101010;
-padding:30px;
-border-radius:16px;
-border:1px solid #1c1c1c;
-}
-
-.process-box h3{
-font-size:28px;
-margin-bottom:14px;
-color:#00ff99;
-}
-
-.contact{
-background:#0d0d0d;
-padding:50px;
-border-radius:20px;
-border:1px solid #1c1c1c;
-}
-
-.contact h2{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.contact-item{
-font-size:22px;
-margin-bottom:18px;
-}
-
-.contact-item a{
-color:#00ff99;
-text-decoration:none;
-}
-
-footer{
-padding:60px 0;
-text-align:center;
-border-top:1px solid #151515;
-color:#777777;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:44px;
-}
-
-.section-title{
-font-size:38px;
-}
-
-.hero p,
-.section-sub{
-font-size:18px;
-}
-
-.contact h2{
-font-size:34px;
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VWELDCORE | Industrial Cold Room Engineering & Steel Fabrication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        industrial: {
+                            900: '#111827',
+                            800: '#1f2937',
+                            primary: '#f59e0b', // Safety Amber
+                            accent: '#3b82f6'   // Engineering Blue
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
 
-<body>
+    <header class="bg-industrial-900 text-white sticky top-0 z-50 shadow-md border-b-4 border-industrial-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white p-1 rounded shadow">
+                    <img src="vweldcore-logo.jpg" alt="VWELDCORE" class="h-12 w-auto object-contain">
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tighter block text-industrial-primary">VWELDCORE</span>
+                    <span class="text-xs uppercase tracking-widest block text-gray-400">Engineering & Fabrication</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-semibold tracking-wide text-sm uppercase">
+                <a href="#capabilities" class="hover:text-industrial-primary transition">Capabilities</a>
+                <a href="#coldrooms" class="hover:text-industrial-primary transition">Cold Rooms</a>
+                <a href="#fabrication" class="hover:text-industrial-primary transition">Stainless Steel</a>
+                <a href="#intake" class="bg-industrial-primary text-industrial-900 px-4 py-2 rounded font-bold hover:bg-yellow-500 transition">Request Technical Bid</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-<div class="container nav">
-<div class="logo">
-VWELDCORE
-</div>
+    <section class="relative bg-industrial-900 text-white py-24 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="coldroom_hero.jpg" alt="Industrial Installation" class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-5xl mx-auto text-center z-10">
+            <span class="bg-industrial-primary text-industrial-900 text-xs font-black uppercase px-3 py-1 rounded tracking-wider inline-block mb-4">Lagos Industrial Corridor Operational Base</span>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">
+                HEAVY-DUTY COLD ROOMS & <br><span class="text-industrial-primary">STAINLESS STEEL FABRICATION</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                Precision engineering for food processing plants, pharmaceutical storage, and commercial logistics across Nigeria. Built to survive rigorous demands.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#intake" class="w-full sm:w-auto bg-industrial-primary text-industrial-900 font-bold px-8 py-4 rounded text-center shadow-lg hover:bg-yellow-500 transition text-lg">
+                    Initiate Client Intake
+                </a>
+                <a href="#capabilities" class="w-full sm:w-auto bg-gray-800 text-gray-200 border border-gray-700 font-bold px-8 py-4 rounded text-center hover:bg-gray-700 transition text-lg">
+                    View Specifications
+                </a>
+            </div>
+        </div>
+    </section>
 
-<div>
-VWELDCORE Innovations NG Limited
-</div>
-</div>
-</header>
+    <section class="bg-white border-b border-gray-200 shadow-sm relative z-20 -mt-8 max-w-6xl mx-auto rounded-lg grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200 overflow-hidden text-center">
+        <div class="p-6">
+            <p class="text-3xl font-black text-industrial-primary">Polyurethane</p>
+            <p class="text-sm font-bold text-gray-500 uppercase tracking-wider">High-Density Insulation Panels</p>
+        </div>
+        <div class="p-6">
+            <p class="text-3xl font-black text-industrial-accent">Grade 304 / 316</p>
+            <p class="text-sm font-bold text-gray-500 uppercase tracking-wider">Hygienic Stainless Fabrication</p>
+        </div>
+        <div class="p-6">
+            <p class="text-3xl font-black text-green-600">NAFDAC / GMP</p>
+            <p class="text-sm font-bold text-gray-500 uppercase tracking-wider">Compliance Engineering Standards</p>
+        </div>
+    </section>
 
-<section class="hero container">
+    <section id="capabilities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight">ENGINEERING CAPABILITIES</h2>
+            <div class="h-1 w-24 bg-industrial-primary mx-auto mt-4"></div>
+        </div>
 
-<h1>
-Commercial Cold Room Engineering & Stainless Steel Fabrication Across Nigeria
-</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" id="coldrooms">
+            <div>
+                <span class="text-sm font-bold text-industrial-accent uppercase tracking-widest block mb-2">01 / REFRIGERATION</span>
+                <h3 class="text-2xl md:text-3xl font-black mb-4 uppercase">Industrial Cold Storage Solutions</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Custom designing and installing robust cold rooms, blast freezers, and pharmaceutical walk-in chillers. Engineered utilizing high-density cam-locking polyurethane (PU) insulation profiles to maintain rigorous thermal baselines under volatile ambient temperatures.
+                </p>
+                <ul class="space-y-3 font-semibold text-gray-700">
+                    <li class="flex items-center"><span class="text-industrial-primary mr-2">✔</span> Digital temperature monitoring & automation alerts</li>
+                    <li class="flex items-center"><span class="text-industrial-primary mr-2">✔</span> Reinforced structural floor configurations for forklift access</li>
+                    <li class="flex items-center"><span class="text-industrial-primary mr-2">✔</span> Heavy-duty airtight sliding processing doors</li>
+                </ul>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-xl border border-gray-200">
+                <img src="Cold_Room.jpg" alt="Cold Room Installation" class="w-full h-80 object-cover">
+            </div>
+        </div>
 
-<p>
-VWELDCORE Innovations NG Limited provides cold room construction, refrigeration system installation, stainless steel fabrication, industrial welding, and engineering support services for supermarkets, restaurants, hotels, pharmaceutical facilities, logistics operators, and commercial businesses.
-</p>
+        <hr class="my-20 border-gray-200">
 
-<div class="cta-row">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" id="fabrication">
+            <div class="lg:order-2">
+                <span class="text-sm font-bold text-industrial-accent uppercase tracking-widest block mb-2">02 / FABRICATION</span>
+                <h3 class="text-2xl md:text-3xl font-black mb-4 uppercase">Stainless Steel & Structural Welding</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Heavy manufacturing structural setups using pristine corrosion-resistant sheets and tubing. Precision argon TIG welding systems configured specifically for high-hygiene food processing conveyors, tables, mixing vats, and factory floor sorting structures.
+                </p>
+                <ul class="space-y-3 font-semibold text-gray-700">
+                    <li class="flex items-center"><span class="text-industrial-primary mr-2">✔</span> Smooth anti-bacterial welded seam finishes</li>
+                    <li class="flex items-center"><span class="text-industrial-primary mr-2">✔</span> Tailored commercial kitchen setups & drainage solutions</li>
+                    <li class="flex items-center"><span class="text-industrial-primary mr-2">✔</span> Rugged industrial structural steel framing</li>
+                </ul>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-xl border border-gray-200 lg:order-1">
+                <img src="stainless_steel.jpg" alt="Stainless Steel Fabrication" class="w-full h-80 object-cover">
+            </div>
+        </div>
+    </section>
 
-<a class="btn btn-primary"
-href="https://wa.me/2349068771239"
-target="_blank">
-Request Project Quote
-</a>
+    <section id="intake" class="bg-industrial-800 text-white py-20 px-4 border-t-8 border-industrial-primary">
+        <div class="max-w-3xl mx-auto bg-industrial-900 rounded-2xl p-8 md:p-12 shadow-2xl border border-gray-800">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-black uppercase text-industrial-primary tracking-tight">PROJECT INTAKE PORTAL</h2>
+                <p class="text-gray-400 mt-2 text-sm">Submit your technical variables to trigger an automated request for quote pipeline routing.</p>
+            </div>
+            
+            <form class="space-y-6" onsubmit="alert('Project parameters received. The outreach routing pipeline has queued this inquiry.'); return false;">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-2">Business Name</label>
+                        <input type="text" required class="w-full bg-industrial-800 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-industrial-primary" placeholder="e.g., Lagos Agro Processors">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-2">Corporate Email</label>
+                        <input type="email" required class="w-full bg-industrial-800 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-industrial-primary" placeholder="engineering@company.com">
+                    </div>
+                </div>
 
-<a class="btn btn-secondary"
-href="#projects">
-View Projects
-</a>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-2">Target Technical Requirement</label>
+                    <select class="w-full bg-industrial-800 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-industrial-primary">
+                        <option>Commercial Cold Room Installation</option>
+                        <option>Industrial Blast Freezer Setup</option>
+                        <option>Hygienic Stainless Steel Fabrication</option>
+                        <option>Structural Heavy Steel Framing & Welding</option>
+                        <option>Other / Custom Industrial Request</option>
+                    </select>
+                </div>
 
-</div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider font-bold text-gray-400 mb-2">Project Dimensions / Scope Details</label>
+                    <textarea rows="4" required class="w-full bg-industrial-800 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-industrial-primary" placeholder="Provide target room volume dimensions, temperature ranges, or metal gauge preferences..."></textarea>
+                </div>
 
-<div class="trust-bar">
+                <button type="submit" class="w-full bg-industrial-primary text-industrial-900 font-black uppercase py-4 rounded shadow-lg hover:bg-yellow-500 transition tracking-wider text-base">
+                    Transmit Technical Scope
+                </button>
+            </form>
+        </div>
+    </section>
 
-<div class="trust-grid">
-
-<div class="trust-item">
-Registered Nigerian Limited Company
-</div>
-
-<div class="trust-item">
-Commercial Cold Room Installation
-</div>
-
-<div class="trust-item">
-Stainless Steel Fabrication
-</div>
-
-<div class="trust-item">
-Industrial Welding Services
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="container">
-
-<h2 class="section-title">
-Engineering Services
-</h2>
-
-<p class="section-sub">
-Industrial fabrication and refrigeration solutions built for operational durability, food-grade compliance, and commercial performance.
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h3>Cold Room Construction</h3>
-
-<p>
-Commercial cold room systems for food storage, frozen products, pharmaceutical applications, and temperature-controlled operations.
-</p>
-
-<ul>
-<li>Cold room fabrication</li>
-<li>Insulated panel installation</li>
-<li>Compressor system setup</li>
-<li>Freezer room construction</li>
-<li>Maintenance support</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Stainless Steel Fabrication</h3>
-
-<p>
-Custom stainless fabrication for commercial kitchens, storage facilities, production environments, and industrial operations.
-</p>
-
-<ul>
-<li>Stainless shelves</li>
-<li>Food-grade fabrication</li>
-<li>Custom steel structures</li>
-<li>Industrial welding</li>
-<li>On-site installation</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Industrial Support</h3>
-
-<p>
-Technical support and engineering assistance for operational facilities requiring fabrication, repair, installation, or infrastructure upgrades.
-</p>
-
-<ul>
-<li>Equipment repairs</li>
-<li>Steel reinforcement</li>
-<li>Welding services</li>
-<li>Installation support</li>
-<li>Facility upgrades</li>
-</ul>
-</div>
-
-</div>
-
-</section>
-
-<section class="container" id="projects">
-
-<h2 class="section-title">
-Project Gallery
-</h2>
-
-<p class="section-sub">
-Real fabrication and installation projects executed by VWELDCORE Innovations NG Limited.
-</p>
-
-<div class="gallery">
-
-<img src="assets/images/projects/project1.jpg" alt="Cold room installation">
-
-<img src="assets/images/projects/project2.jpg" alt="Stainless fabrication">
-
-<img src="assets/images/projects/project3.jpg" alt="Industrial welding">
-
-<img src="assets/images/projects/project4.jpg" alt="Commercial refrigeration">
-
-</div>
-
-</section>
-
-<section class="container">
-
-<h2 class="section-title">
-Project Delivery Process
-</h2>
-
-<div class="process">
-
-<div class="process-box">
-<h3>01</h3>
-<p>Consultation and project assessment.</p>
-</div>
-
-<div class="process-box">
-<h3>02</h3>
-<p>Site inspection and engineering planning.</p>
-</div>
-
-<div class="process-box">
-<h3>03</h3>
-<p>Fabrication and equipment preparation.</p>
-</div>
-
-<div class="process-box">
-<h3>04</h3>
-<p>Installation, testing, and delivery.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="container">
-
-<div class="contact">
-
-<h2>
-Request Consultation
-</h2>
-
-<div class="contact-item">
-WhatsApp:
-<a href="https://wa.me/2349068771239">
-+234 906 877 1239
-</a>
-</div>
-
-<div class="contact-item">
-Email:
-<a href="mailto:info.vweldcore@gmail.com">
-info.vweldcore@gmail.com
-</a>
-</div>
-
-<div class="contact-item">
-Company:
-VWELDCORE Innovations NG Limited
-</div>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 VWELDCORE Innovations NG Limited. All rights reserved.
-</footer>
+    <footer class="bg-industrial-900 text-gray-400 py-8 px-4 border-t border-gray-800 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p>&copy; 2026 VWELDCORE NIGERIA. All Rights Reserved. Industrial Engineering Solutions.</p>
+            <div class="flex space-x-6">
+                <span>Ikeja / Apapa Industrial Zone</span>
+                <span>•</span>
+                <span>NAFDAC Operational Compliance Standard</span>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
