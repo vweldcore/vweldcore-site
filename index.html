@@ -78,19 +78,25 @@
 </div></div></section>
 <section id="quote"><div class="wrap">
 <div class="sh"><h2>Request a Quote</h2><p>Tell us what you need. We reply within 24 hours.</p></div>
-<form action="https://formsubmit.co/info.vweldcore@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="New quote request from vweldcore.com.ng">
-<input type="hidden" name="_next" value="https://www.vweldcore.com.ng/?sent=1">
-<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-<div><label for="n">Full name</label><input id="n" name="name" required></div>
-<div><label for="c">Company</label><input id="c" name="company" required></div>
-<div><label for="e">Business email</label><input id="e" type="email" name="email" required></div>
-<div><label for="p">Phone / WhatsApp</label><input id="p" type="tel" name="phone" required></div>
-<div><label for="r">Requirement</label><select id="r" name="requirement">
+<form id="qf">
+<div><label for="n">Full name</label><input id="n" required></div>
+<div><label for="c">Company</label><input id="c" required></div>
+<div><label for="e">Business email</label><input id="e" type="email" required></div>
+<div><label for="p">Phone / WhatsApp</label><input id="p" type="tel" required></div>
+<div><label for="r">Requirement</label><select id="r">
 <option>Cold Room / Blast Freezer</option><option>Walk-in Chiller</option><option>Ice Block Machine</option><option>Stainless Steel Fabrication</option><option>AC Installation or Repair</option><option>Other</option></select></div>
-<div><label for="d">Project details (size, location, timeline)</label><textarea id="d" name="details" rows="5" required></textarea></div>
-<button class="btn btn-blue" type="submit">Send Request</button>
-</form></div></section>
+<div><label for="d">Project details (size, location, timeline)</label><textarea id="d" rows="5" required></textarea></div>
+<button class="btn btn-blue" type="submit">Send via WhatsApp</button>
+<p style="font-size:.85rem;color:#475569;text-align:center">Opens WhatsApp with your details filled in. Prefer email? <a href="mailto:info.vweldcore@gmail.com" style="color:#2563eb">info.vweldcore@gmail.com</a></p>
+</form>
+<script>
+document.getElementById('qf').addEventListener('submit',function(ev){
+ev.preventDefault();
+var g=function(i){return document.getElementById(i).value.trim()};
+var t=['QUOTE REQUEST','Name: '+g('n'),'Company: '+g('c'),'Email: '+g('e'),'Phone: '+g('p'),'Requirement: '+g('r'),'Details: '+g('d')].join('\n');
+window.location.href='https://wa.me/2347033518941?text='+encodeURIComponent(t);
+});
+</script></div></section>
 </main>
 <footer class="ftr" id="contact"><div class="wrap">
 <div class="grid">
