@@ -70,3 +70,12 @@ html{scroll-padding-top:112px}
 .nav{display:flex;order:3;width:100%;overflow-x:auto;white-space:nowrap;gap:20px;padding:10px 0 12px;font-size:.9rem;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
 }
+/* FAQ */
+.faq{max-width:780px;margin:0 auto;display:grid;gap:12px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.faq summary{cursor:pointer;font-weight:700;color:var(--navy);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";float:right;color:var(--blue);font-size:1.3rem;line-height:1}
+.faq details[open] summary:after{content:"\2212"}
+.faq p{color:var(--mut);margin-top:10px;font-size:.95rem}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
