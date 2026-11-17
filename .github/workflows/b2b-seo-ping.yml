@@ -1,0 +1,25 @@
+name: Instant B2B Search Indexing
+on:
+  push:
+    branches: [ main ]
+jobs:
+  indexnow-ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify IndexNow & Sitemap Crawlers
+        run: |
+          curl -s -X POST "https://indexnow.org" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "://vweldcore.com.ng",
+              "key": "vweldcore2026b2bindexnow",
+              "keyLocation": "https://vweldcore.com.ngvweldcore2026b2bindexnow.txt",
+              "urlList": [
+                "https://vweldcore.com.ng",
+                "https://vweldcore.com.ngcold-rooms-lagos.html",
+                "https://vweldcore.com.ngstainless-steel-fabrication.html",
+                "https://vweldcore.com.ngspecs.html",
+                "https://vweldcore.com.ngprofile.html"
+              ]
+            }' || true
+          curl -s "https://www.google.com/ping?sitemap=https://vweldcore.com.ngsitemap.xml" || true
